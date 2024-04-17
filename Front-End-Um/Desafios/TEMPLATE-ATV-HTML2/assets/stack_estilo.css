@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+figure{
+    margin: 0;
+}
+body{
+    margin: 0;
+    background-color: #292929;
+}
+.margen{
+    padding: 9px 5px;
+}
+#topo a{
+    font-size: 16.8px;
+}
+.img1 img{
+    width: 515px;
+    height: 260px;
+}
+.img2 img{
+    width: 300px;
+    height: 200px;
+}
+.destaque{
+    text-decoration: underline;
+}
+.img3 img{
+    width: 400px;
+    height: 300px;
+}
+.fundo{
+    background-color: white;
+}
+.secao-borda{
+    /* border-bottom: 1px solid rgb(42, 117, 122);
+    box-shadow: 0 0px 1px rgb(74, 142, 187); */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: relative;
+}
+.img3 img{
+    position: relative;
+    top: 39px;
+}
+nav{
+    margin: 0 0 20px;
+}
+.img4 img{
+    width: 350px;
+    margin-bottom: 35px;
+    height: 250px;
+
+}
+.rodape p{
+    margin: 0;
+    text-align: center;
+    position: relative;
+    bottom: 55px;
+}
+a{
+    color: blue;
+}
+.rodape {
+    padding: 25px;
+    /* box-shadow: 2px -13px 20px -20px rgb(100, 100, 100); */
+    box-shadow: 2px -20px 36px -32px rgb(71, 71, 71);
+}
+
+.hr{
+    border-style: inset;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 1px rgb(8, 87, 160);
+}
+.hr1{
+    border-color: rgb(145, 143, 143);
+    height: 1px;
+    box-shadow: 0 -12px 25px 1px rgb(0, 0, 0);
+}
+.hr2{
+    border-color: rgb(217, 249, 255);
+}
