@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+</head>
+<style>
+    td{
+        text-align: center;
+
+    }
+    table, th, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    table{
+        width: 100%;
+    }
+    /* impar */
+    /* td:nth-child(odd),  */
+    tbody tr:nth-child(odd){
+        background-color: #ccc;
+    }
+    /* par */
+    /* th:nth-child(even) */
+</style>
+<body>
+    <!-- <ol>
+        <li>Introdução a banco de dados</li>
+        <li>Qualidade de Software</li>
+        <li>React</li>
+        <li>Back-End</li>
+    </ol>
+    <ol type="a">
+        <li>Introdução a banco de dados</li>
+        <li>Qualidade de Software</li>
+        <li>React</li>
+        <li>Back-End</li>
+    </ol>
+    <ol type="A">
+        <li>Introdução a banco de dados</li>
+        <li>Qualidade de Software</li>
+        <li>React</li>
+        <li>Back-End</li>
+    </ol>
+    <ol type="I">
+        <li>Introdução a banco de dados</li>
+        <li>Qualidade de Software</li>
+        <li>React</li>
+        <li>Back-End</li>
+    </ol>
+    <ol type="i">
+        <li>Introdução a banco de dados</li>
+        <li>Qualidade de Software</li>
+        <li>React</li>
+        <li>Back-End</li>
+    </ol>
+
+    <ul >
+        <li>Café</li>
+        <li>Manteiga</li>
+        <li>Leite</li>
+        <li>Ovos</li>
+        <li>Pão</li>
+    </ul>
+    <ul style="list-style-type: circle;">
+        <li>Café</li>
+        <li>Manteiga</li>
+        <li>Leite</li>
+        <li>Ovos</li>
+        <li>Pão</li>
+    </ul>
+    <ul style="list-style-type: square;">
+        <li>Café</li>
+        <li>Manteiga</li>
+        <li>Leite</li>
+        <li>Ovos</li>
+        <li>Pão</li>
+    </ul>
+    <dl>
+        <dt>Html</dt>
+        <dd>Tags Semanticas</dd>
+        <dd>HTML5</dd>
+        <dt>Css</dt>
+        <dd>Estilos inline</dd>
+        <dd>Estilos externos</dd>
+    </dl> -->
+    <table border="1">
+        <thead>
+            <tr> <!-- Linha da tablela-->
+                <th>Cursos</th> <!-- Coluna da tabela-->
+                <th>Carga Horaria</th> 
+                <th>Instrutora</th> 
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <!-- <td colspan="2">Javascript</td> -->
+                <td>Javascript</td>
+                <td align="center">20h</td>
+                <td>Carla</td>
+            </tr>
+            <tr>
+                <!-- <td rowspan="2">Javascript</td> -->
+                <td>Javascript</td>
+                <td align="center">20h</td>
+                <td>Carla</td>
+            </tr>
+            <tr>
+                <td>Javascript</td>
+                <td>20h</td>
+                <td>Carla</td>
+            </tr>
+            <tr>
+                <td>Javascript</td>
+                <td>20h</td>
+                <td>Carla</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <td colspan="3" align="center">Feito por Patrick</td>
+        </tfoot>
+    </table>
+</body>
+</html>
