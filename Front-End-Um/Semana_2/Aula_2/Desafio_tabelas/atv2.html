@@ -9,38 +9,47 @@
     table, tr, td{
     border: 1px solid black;
     border-collapse: collapse;
+    text-transform: uppercase;
     }
 
     table{
         width: 500px;
         text-align: center;
     }
-    thead th{
+    thead td{
         height: 100px;
+        background-color: rgba(170, 255, 0, 0.571);
     }
     tbody td{
         height: 350px;
     }
+    tbody td:nth-child(odd){
+        background-color: rgba(0, 255, 255, 0.554);
+    }
+    tbody td:nth-child(even){
+        background-color: rgba(255, 0, 0, 0.328);
+    }
     tfoot td{
         height: 35px;
+        background-color: rgba(127, 255, 212, 0.578);
     }
 </style>
 <body>
     <table>
         <thead>
             <tr>
-                <th colspan="2">TOPO</th>
+                <td colspan="2">Topo</td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>MENU</td>
-                <td style="width:75%;">CONTEÚDO</td>
+                <td>Menu</td>
+                <td style="width:75%;">Conteúdo</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="2">RODAPÉ</td>
+                <td colspan="2">Rodapé</td>
             </tr>
         </tfoot>
     </table>

@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <style>
-    td, th{
+    td{
         border: 1px solid black;
         width: 100px;
         height: 100px;
@@ -16,13 +16,32 @@
         border: 2px dashed blueviolet;
         margin: 25px 0;
     }
-    
+    table:nth-child(1) tr:nth-child(odd) td:nth-child(odd) {
+    background-color: aqua;
+    }
+    table:nth-child(2) tr:nth-child(even) td:nth-child(odd){
+        background-color: rgb(255, 242, 0);
+    }
+    table:nth-child(3) tr:nth-child(even) td:nth-child(odd){
+        background-color: rgb(60, 255, 0);
+    }
+    table:nth-child(1) td{
+        border-style: dotted;
+        border-radius: 10px;
+    }
+    table:nth-child(2) td{
+        border: 3px double blue;
+    }
+    table:nth-child(3) td{
+        border: 3px inset rgb(221, 255, 0);
+        border-radius: 10px;
+    } 
 </style>
 <body>
     <table>
         <thead>
             <tr>
-                <th colspan="3"></th>
+                <td colspan="3"></td>
             </tr>
         </thead>
         <tbody>
@@ -40,81 +59,53 @@
             </tr>
         </tfoot>
     </table>
-    <br>
-    <!-- <table>
-         <thead> 
-            <tr>
-                <th rowspan="3"></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
+
+    <table>
         <tbody>
+            <tr>
+                <td rowspan="3"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
             <tr>
                 <td></td>
                 <td></td>
             </tr>
         </tbody>
-        <tfoot>
+    </table>
+
+    <table>
+        <tbody>
             <tr>
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                <td rowspan="4"></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
             </tr>
-        </tfoot>
-    </table> -->
-    <br>
-    <table>
-        <tr>
-            <td rowspan="3"></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-    <br>
-    <table>
-        <tr>
-            <td colspan="5"></td>
-        </tr>
-        <tr>
-            <td rowspan="4"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td rowspan="2"></td>
-            <td></td>
-        </tr>
-        <tr> 
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td colspan="3"></td>
-            <td></td>
-        </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td rowspan="2"></td>
+                <td></td>
+            </tr>
+            <tr> 
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td></td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>
