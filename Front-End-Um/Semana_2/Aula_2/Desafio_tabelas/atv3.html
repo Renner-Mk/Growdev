@@ -10,35 +10,51 @@
         border: 1px solid black;
         width: 100px;
         height: 100px;
-        
+        transition: .4s;
     }
     table{
         border: 2px dashed blueviolet;
         margin: 25px 0;
+        
     }
-    table:nth-child(1) tr:nth-child(odd) td:nth-child(odd) {
-    background-color: aqua;
+    .t1 td:nth-child(odd) {
+    background-color: rgb(0, 110, 255);
     }
+    /*Testando possibilidades do css mesmo nao sendo a melhor forma,
+    atentar com problemas de especificidade, facil de resolver usando classes*/
     table:nth-child(2) tr:nth-child(even) td:nth-child(odd){
         background-color: rgb(255, 242, 0);
     }
-    table:nth-child(3) tr:nth-child(even) td:nth-child(odd){
+    .t3 tr:nth-child(even) td:nth-child(odd){
         background-color: rgb(60, 255, 0);
     }
     table:nth-child(1) td{
         border-style: dotted;
         border-radius: 10px;
     }
-    table:nth-child(2) td{
+    .t2 td{
         border: 3px double blue;
     }
     table:nth-child(3) td{
         border: 3px inset rgb(221, 255, 0);
         border-radius: 10px;
-    } 
+    }
+    .hover tr:nth-child(odd) td:hover, /*hover em todas as tabelas que as celulas nas linhas impares*/
+    .hover tr:nth-child(even) td:hover,/*hover em todas as tabelas que as celulas nas linhas pares*/
+    table:nth-child(2) tr:nth-child(even) td:hover{/*hover na as tabela 2 que as celulas nas linhas pares, motivo é que as outras formatações nao pega pela especificidade*/
+        background-color: rgb(242, 3, 255);
+    }
+    /*Mesma coisa do hover mas quando botao direito clicado em cima*/
+    .hover tr:nth-child(odd) td:active,
+    .hover tr:nth-child(even) td:active,
+    table:nth-child(2) tr:nth-child(even) td:active{
+        background-color: rgb(90, 255, 241);
+    }
+    
+
 </style>
 <body>
-    <table>
+    <table class="t1 hover">
         <thead>
             <tr>
                 <td colspan="3"></td>
@@ -60,7 +76,7 @@
         </tfoot>
     </table>
 
-    <table>
+    <table class="t2 hover">
         <tbody>
             <tr>
                 <td rowspan="3"></td>
@@ -78,7 +94,7 @@
         </tbody>
     </table>
 
-    <table>
+    <table class="t3 hover">
         <tbody>
             <tr>
                 <td colspan="5"></td>
