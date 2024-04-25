@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url(https://cdn.discordapp.com/attachments/1220794204150829128/1232461613769035826/backgound.jpg?ex=66298ad2&is=66283952&hm=7d9b4b9d5edfc8eefff85da532dede9dd2c183cd8962dc53b6769d50a5f2ba61&)no-repeat fixed;
+    background-size: 1500px 250px;
+    background-position: top right;
+}
+div{
+    width: 350px;
+    background-color: aquamarine;
+    border-top-left-radius: 50%;
+    font-family: "Poopins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+    font-variant: small-caps;
+    margin-bottom: 150px;
+}
+td, table{
+    border: 2px solid rgb(81, 81, 81);
+    padding: 25px;
+    background-color: rgb(204, 204, 204);
+
+}
+table{
+    padding: 5px;
+}
+td:hover{
+    background-color: blue;
+}
+li{
+    margin-left: 30px;
+    color: aqua;
+}

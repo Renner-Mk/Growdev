@@ -1,0 +1,48 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+}
+pre{
+    color: rgb(25, 65, 151);
+}
+body{
+    background-color: rgb(179, 194, 187);
+}
+h1, h2, h3, h4, h5, h6{
+    color: blueviolet;
+    font-size: 28px;
+}
+strong{
+    color: red;
+}
+mark{
+    background-color: rgb(111, 255, 0);
+}
+a{
+    color: rgb(255, 142, 3);
+    text-decoration: none;
+}
+table,td, th{
+    border: 3px groove greenyellow;
+    width: 30vh;
+    border-collapse: collapse;
+}
+dl{
+    border: 1px solid red;
+}
+th{
+    background-color: aqua;
+}
+ol{
+    list-style-type: upper-alpha;
+}
+ul{
+    list-style-type: circle;
+}
+
+td:nth-child(even){
+    background-color: olive;
+}
+iframe {
+    max-width: 30vw;
+    max-height: 30vh;
+}
