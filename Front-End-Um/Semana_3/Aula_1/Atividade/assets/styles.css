@@ -21,16 +21,20 @@ a{
     color: rgb(255, 142, 3);
     text-decoration: none;
 }
-table,td, th{
-    border: 3px groove greenyellow;
+table{
+    border: 2px groove greenyellow;
     width: 30vh;
     border-collapse: collapse;
 }
-dl{
-    border: 1px solid red;
+caption{
+    margin: 10px;
+    border-bottom: 3px groove greenyellow;
 }
 th{
     background-color: aqua;
+}
+td{
+    border-bottom: 1px solid white;
 }
 ol{
     list-style-type: upper-alpha;
@@ -38,7 +42,10 @@ ol{
 ul{
     list-style-type: circle;
 }
-
+dl{
+    border: 1px solid red;
+    padding: 5px;
+}
 td:nth-child(even){
     background-color: olive;
 }
