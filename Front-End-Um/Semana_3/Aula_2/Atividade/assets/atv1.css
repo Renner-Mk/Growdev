@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 10px;
+}
+
+.um{
+    height: 250px;
+    width: 250px;
+    background-color: blue;
+    position: relative;
+}
+.dois{
+    background-color: red;
+    position: relative;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+}
+.tres{
+    background-color: black;
+    position: relative;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+}
+.quatro{
+    background-color: green;
+    position: relative;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+}
+.cinco{
+    background-color: yellow;
+    position: relative;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+}
+
+

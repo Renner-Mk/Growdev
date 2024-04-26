@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ccc;
+}
+.left{
+    width: 50vw;
+    height: 100vh;
+    float: left;
+}
+.right{
+    width: 50vw;
+    height: 100vh;
+    float: right;
+}
+.left .box {
+    clear: both;
+    width: 100%;
+    /* margin-bottom: 10px; */
+}
+.box div{
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+.left .box1 div{
+    float: left;
+    margin-right: 10px;
+}
+.left .box2 div{
+    float: left;
+    margin-right: 10px;
+}
+.left .box3 div{
+    clear: left;
+    margin-right: 10px;
+}
+.right .box3{
+    width: fit-content;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    float: left;
+}
+.right .box2{
+    width: fit-content;
+    position: absolute;
+    bottom: 0;
+    right: 160px;
+}
+.right .box1{
+    width: fit-content;
+    position: absolute;
+    bottom: 0;
+    right: 320px;
+}
