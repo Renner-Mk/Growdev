@@ -6,56 +6,57 @@
 body{
     background-color: #ccc;
 }
-.left{
-    width: 50vw;
-    height: 100vh;
-    float: left;
-}
-.right{
-    width: 50vw;
-    height: 100vh;
-    float: right;
-}
-.left .box {
-    clear: both;
-    width: 100%;
-    /* margin-bottom: 10px; */
-}
-.box div{
-    height: 150px;
-    width: 150px;
-    background-color: black;
-    margin-bottom: 10px;
-}
-
-.left .box1 div{
-    float: left;
-    margin-right: 10px;
-}
-.left .box2 div{
-    float: left;
-    margin-right: 10px;
-}
-.left .box3 div{
-    clear: left;
-    margin-right: 10px;
-}
-.right .box3{
-    width: fit-content;
+.box{
     position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #474747;
+}
+.div1{
+    top: 0;
+    left: 0;
+}
+.div2{
+    top: 0;
+    left: 6.875rem;
+}
+.div3{
+    top: 0;
+    left: 13.75rem;
+}
+.div4{
+    top: 0;
+    left: 6.875rem;
+}
+.div5{
+    top: 0;
+    left: 13.75rem;
+}
+.div6{
+    top: 6.875rem;
+    left: 6.875rem;
+}
+.div7{
     bottom: 0;
     right: 0;
-    float: left;
 }
-.right .box2{
-    width: fit-content;
-    position: absolute;
+.div8{
     bottom: 0;
-    right: 160px;
+    right: 6.875rem;
 }
-.right .box1{
-    width: fit-content;
-    position: absolute;
+.div9{
     bottom: 0;
-    right: 320px;
+    right: 13.75rem;
+}
+.div10{
+    bottom: 6.875rem;
+    right: 0;
+}
+.div11{
+    bottom: 13.75rem;
+    right: 0;
+}
+.div12{
+    bottom: 6.875rem;
+    right: 6.875rem;
 }
