@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Atividade</title>
+</head>
+<body>
+    
+
+    <script>
+        document.write("Exercicio 1 <br>")
+        let idade = 25
+        document.write(`Minha idade é ${idade}<br>`)
+
+
+        
+        document.write("<br><br> Exercicio 2 <br>")
+        let valor1 = 25
+        let valor2 = 50
+        let resultado = valor1 + valor2
+        document.write(`Resultado da soma de ${valor1} e ${valor2} é ${resultado}<br>`)
+
+
+        
+        document.write("<br><br> Exercicio 3 <br>")
+        let valor3 = 225.80
+        let valor4 = 4
+        let parcela = valor3 / valor4
+        document.write(`O valor total da compra foi R$${valor3} <br>`)
+        document.write(`Forma de pagamento: x${parcela} de R$${valor3}<br>`)
+
+
+        
+        document.write("<br><br> Exercicio 4 <br>")
+        let minutos = 120
+        let segundos = 60 * minutos  
+        document.write(`${minutos} minutos equivale à ${segundos} segundos!<br>`)
+
+
+
+        
+        document.write("<br><br> Exercicio 5 <br>")
+        let nomeAluno = "Patrick"
+        let nota1 = 7 
+        let nota2 = 9
+        let nota3 = 5
+        let media = (nota1+nota2+nota3)/3
+        document.write(`O aluno ${nomeAluno} ficou com media ${media}<br>`)
+
+
+
+
+        
+        document.write("<br><br> Exercicio 6 <br>")
+        let valorA = 10
+        let valorB = 20
+        const temp =  valorA
+        valorA = valorB
+        valorB = temp
+        document.write(`valor A = ${valorA} <br>`)
+        document.write(`valor B = ${valorB}<br>`)
+
+
+
+        
+        document.write("<br><br> Exercicio 7 <br>")
+        let eleitoresTotais
+        const votosNulos = 43
+        const votosBrancos = 53
+        const validos = 347
+        eleitoresTotais = votosBrancos+votosNulos+validos
+        let percentual = (100*votosBrancos)/eleitoresTotais
+        document.write(`Votos Brancos são ${percentual.toFixed(2)}% dos ${eleitoresTotais} eleitores do municipio <br>`)
+        percentual = (100*votosNulos)/eleitoresTotais
+        document.write(`Votos Nulos são ${percentual.toFixed(2)}% dos ${eleitoresTotais} eleitores do municipio <br>`)
+        percentual = (100*validos)/eleitoresTotais
+        document.write(`Votos Validos são ${percentual.toFixed(2)}% dos ${eleitoresTotais} eleitores do municipio <br>`)
+        
+
+        
+        document.write("<br><br> Exercicio 8 <br>")
+        const num1 = 50
+        const num2 = 30
+
+        if(num1 === num2){
+            document.write(`Numeros iguais<br>`)
+        } else if (num1 > num2){
+            document.write(`Numero 1 Maior<br>`)
+        } else{
+            document.write(`Numero 2 Maior<br>`)
+        }
+
+
+        document.write("<br><br> Exercicio 9 <br>")
+        let apple = 25
+        let preco 
+        if (apple < 12){
+            preco = apple * 0.30
+        } else{
+            preco = apple * 0.25
+        }
+        document.write(`valor total da compra é $${preco.toFixed(2)}<br>`)
+
+
+
+        document.write("<br><br> Exercicio 10 <br>")
+        const nomePessoa = "Patrick"
+        const idadePessoa = 24
+        let data = new Date()
+        let dataAtual = data.getFullYear() - idadePessoa
+        console.log(typeof data)
+        document.write(`Nome: ${nomePessoa}, idade: ${idadePessoa}, nasceu ${dataAtual}<br>`)
+
+
+
+        document.write("<br><br> Exercicio 11 <br>") 
+        let numTipo = 2
+        if (numTipo % 2 === 0){
+            document.write(`Numero ${numTipo} é par <br>` )
+        }else{
+            document.write(`Numero ${numTipo} é impar <br>` )
+        }
+
+
+        document.write("<br><br> Exercicio 12 <br>") 
+        let anoAtual = new Date().getFullYear()
+        let anoNascimento = 2001
+        if(anoAtual - anoNascimento >=  18){
+            document.write(`Você é maior de idade já pode votar`)
+        } else{
+            document.write(`Você é menor de idade ainda não pode votar`)
+        }
+        
+
+    </script>
+</body>
+</html>
