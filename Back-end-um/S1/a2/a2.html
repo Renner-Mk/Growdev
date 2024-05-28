@@ -9,25 +9,25 @@
     
 
     <script>
-        // const nota1 = Number(prompt("Digite a nota 1"))
-        // const nota2 = Number(prompt("Digite a nota 2"))
-        // const nota3 = Number(prompt("Digite a nota 3"))
+        const nota1 = Number(prompt("Digite a nota 1"))
+        const nota2 = Number(prompt("Digite a nota 2"))
+        const nota3 = Number(prompt("Digite a nota 3"))
 
-        // let media = (nota1+nota2+nota3)/3
+        let media = (nota1+nota2+nota3)/3
 
-        // if(media >= 9){
-        //     document.write(`Aprovado com nota exelente`)
-        // } else if(media >= 7 && media < 9){
-        //     document.write(`Aprovado com nota boa`)
-        // } else if (media < 7){
-        //     let nota4 = Number(prompt("Digite a nota de recuperação"))
-        //     media = (nota1+nota2+nota3+nota4)/4
-        //     if(media > 6){
-        //         document.write(`Aprovado na recuperação`)
-        //     } else {
-        //         document.write(`Reprovado, estude e pratique mais`)
-        //     }
-        // }
+        if(media >= 9){
+            document.write(`Aprovado com nota exelente`)
+        } else if(media >= 7 && media < 9){
+            document.write(`Aprovado com nota boa`)
+        } else if (media < 7){
+            let nota4 = Number(prompt("Digite a nota de recuperação"))
+            media = (nota1+nota2+nota3+nota4)/4
+            if(media > 6){
+                document.write(`Aprovado na recuperação`)
+            } else {
+                document.write(`Reprovado, estude e pratique mais`)
+            }
+        }
 
         let mes = parseInt(prompt("Digite um numero de 1 a 12 para saber qual o mês"))
 

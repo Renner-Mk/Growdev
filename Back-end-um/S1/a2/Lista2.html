@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 2</title>
+</head>
+<body>
+
+
+    
+
+<script>
+        document.write("<h3>Exercicio 1</h3>")
+        const temperatura = Number(prompt("Digite uma temperatura em celsius"))
+        document.write(`A temperatura de ${temperatura}°C em Fahrenheit é ${temperatura * (9/5) + 32}`)
+
+
+
+        document.write("<br><br><hr>")
+        document.write("<h3>Exercicio 2</h3>")
+        const diaSemana = parseInt(prompt("Um numero de 1 a 7"))
+        switch(diaSemana){
+            case 1 :
+            document.write("Hoje é Domingo")
+            break;
+            case 2 :
+            document.write("Hoje é Segunda")
+            break;
+            case 3 :
+            document.write("Hoje é Terça")
+            break;
+            case 4 :
+            document.write("Hoje é Quarta")
+            break;
+            case 5 :
+            document.write("Hoje é Quita")
+            break;
+            case 6 :
+            document.write("Hoje é Sexta")
+            break;
+            case 7 :
+            document.write("Hoje é Sabado")
+            break;
+            default : 
+            document.write("valor invalido")
+            break;
+        }
+
+ 
+        document.write("<br><br><hr>")
+        document.write("<h3>Exercicio 3</h3>")
+        const numero = Number(prompt("Digite um numero qualquer positivo ou negativo"))
+        numero > 0? document.write("Numero positivo") : numero == 0? document.write("Numero igual a zero") : document.write("Numero negativo")
+
+
+        document.write("<br><br><hr>")
+        document.write("<h3>Exercicio 4</h3>")
+        const valorCarro = 10000
+        const valDistribuidor = valorCarro * 0.28
+        const imposto = valorCarro * 0.45
+        document.write(`Valor total do seu carro é ${valorCarro + valDistribuidor + imposto}`)
+
+
+        document.write("<br><br><hr>")
+        document.write("<h3>Exercicio 5</h3>")
+        const peso = Number( prompt("Digite seu Peso"))
+        let altura = Number( prompt("Digite sua altura em CENTIMETROS")) / 100
+        let imc = peso / (altura*altura)
+        if(imc < 18.5){
+            document.write(`Você está abaixo da faixa de peso ideal`)
+        } else if (imc > 24.99){
+            document.write(`Você está acima da faixa de peso ideal`)
+        }else{
+            document.write(`Você está dentro da faixa de peso ideal`)
+        }
+
+
+        document.write("<br><br><hr>")
+        document.write("<h3>Exercicio 6</h3>")
+        let numero1 = Number( prompt("Um numero"))
+        let numero2 = Number( prompt("Um Segundo numero"))
+        let operador = prompt("escolha um operador para realizar a conta \n - \n * \n + \n **(potencia) \n/ \n%(modulo)")
+
+        if ( operador === '+' ){
+        document.write(`a soma é ${numero1 + numero2}`)
+        }else if(operador === '-'){
+            document.write(`a subtração é ${numero1 - numero2}`)
+        }else if(operador === '/'){
+            document.write(`a divisão é ${numero1 / numero2}`)
+        }else if(operador === '*'){
+            document.write(`a multiplicação é ${numero1 * numero2}`)
+        }else if(operador === '**'){
+            document.write(`a potenciação é ${numero1 ** numero2}`)
+        }else if(operador === '%'){
+            document.write(`o resto da divisao é ${numero1 % numero2}`)
+        }
+
+        document.write("<br><br><hr>")
+        document.write("<h3>Exercicio 7</h3>")
+        let valorSaque = Number( prompt("Digite quanto deseja sacar, valor deve ser multiplo de 5"))
+        let valorConta = 10000
+
+        if (valorSaque <= (valorConta - 4.50) && (valorSaque % 5) == 0 && valorSaque > 0){
+            document.write(`Valor sacado com sucesso!`)
+        } else if (valorSaque > (valorConta - 4.50)){
+            document.write("Não tem saldo o suficiente para sacar")
+        }else {
+            document.write("Valor não multiplo de 5 ex 455 ou 450.40 ou negativo")
+        }
+
+
+
+        document.write("<br><br><hr>")
+        document.write("<h3>Exercicio 8</h3>")
+        let idadeAtleta = 80
+        let pesoAtleta = 80
+
+        if(idadeAtleta < 12){
+            document.write("Categoria Infantil")
+        } else if(idadeAtleta > 12 && idadeAtleta < 17){
+            pesoAtleta <= 40? document.write("Categoria Juvenil leve") : document.write("Categoria Juvenil pesado")
+        }else if(idadeAtleta > 16 && idadeAtleta < 25){
+            if(pesoAtleta <= 45){
+                document.write("Categoria Senior leve")
+            } else if(pesoAtleta > 45 && pesoAtleta <= 60){
+                document.write("Categoria Senior medio")
+            }else {
+            document.write("Categoria Senior pesado")
+            }
+        }else{
+            document.write("Categoria Veterano")
+        }
+
+        document.write("<br><br><hr>")
+        document.write("<h3>Exercicio 9</h3>")
+        let velocidade = Number( prompt("digite sua velocidade"))
+        if(velocidade > 80){
+            velocidade -= 80
+            velocidade *= 5
+            document.write(`Multado e valor da multa é R$${velocidade}`)
+        }else{
+            document.write(`Dentro do limite de velocidade`)
+        }
+</script>
+
+
+</body>
+</html>
