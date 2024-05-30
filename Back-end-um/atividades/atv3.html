@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        document.write('<h3>Exercicio 1</h3>')
+        let alturaMaior 
+        let alturaMenor   
+        for(let i = 1; i <= 2; i++){
+            let alturaG = Number(prompt("Digite sua altura"))
+            if(i == 1){
+                alturaMaior = alturaG
+                alturaMenor = alturaG
+            }
+            if(alturaMaior < alturaG){
+                alturaMaior = alturaG
+            }
+            if(alturaMenor > alturaG){
+                alturaMenor = alturaG
+            }
+        }
+        document.write(`A menor altura é ${alturaMenor}<br>`)
+        document.write(`A maior altura é ${alturaMaior}<br>`)
+
+
+
+        document.write('<br><hr>')
+        document.write('<h3>Exercicio 2</h3>')
+        let condicao = true
+        let alturaPedro = 150
+        let alturaLucas = 110
+        let ano = 0
+        while(condicao){
+            ano++
+            alturaPedro += 2
+            alturaLucas += 3
+            if(alturaLucas == alturaPedro){
+                document.write(`Lucas e Pedro terao a mesma altura em ${ano} anos <br>`)
+                document.write(`Lucas vai ser mais alto que Pedro em ${ano + 1} anos <br>`)
+                condicao = false
+            }
+        }
+
+
+
+        document.write('<br><hr>')
+        document.write('<h3>Exercicio 3</h3>')
+        let taboada = Number(prompt('Digite o numero para a Taboada'))
+        let repeticoes = Number(prompt('Digite o numero para a Taboada'))
+
+        for(let i = 1; i <= repeticoes; i++){
+            document.write(`${i} * ${taboada} = ${i * taboada}<br>`)
+        }
+
+
+        document.write('<br><hr>')
+        document.write('<h3>Exercicio 4</h3>')
+        let i = 1
+        do{
+            if(i % 3 == 0){
+                document.write(` ${i} `)
+            }
+            i++
+        }while(i <= 250)
+        i = 1
+        document.write(`<br><br>`)
+        do{
+            if(i % 5 == 0){
+                document.write(` ${i} `)
+            }
+            i++
+        }while(i <= 250)
+
+
+        document.write('<br><hr>')
+        document.write('<h3>Exercicio 5</h3>')
+        let numero = Number(prompt('Digite um numero qualquer'))
+        for(let i = 0; i <= numero; i++){
+            document.write(`${i}, `)
+        }
+        document.write('Fim!')
+
+
+        document.write('<br><hr>')
+        document.write('<h3>Exercicio 6</h3>')
+        for(let i = 30; i >= 1; i--){
+            let test = 0
+            for(let n = 1; n <= i; n++){
+                if(Number.isInteger(i / n)){
+                    test++
+                }
+                if(test > 2){
+                    break;
+                }
+            }
+            if(test == 2){
+                document.write(`[${i}], `)
+            } else{
+            document.write(`${i}, `)
+            }
+        }
+
+
+
+
+        document.write('<br><hr>')
+        document.write('<h3>Exercicio 7</h3>')
+        let mediaAritimetica = 0
+        let numPositivos = 0
+        let numNegativos = 0
+        let percentual = 0
+        for(let i = 1; i <= 10; i++){
+            let num = Number(prompt('Digite um numero qualquer'))
+            mediaAritimetica += num
+            if(num > 0){
+                numPositivos++
+            }
+            if(num < 0){
+                numNegativos++
+            }
+        }
+        document.write(`Média Aritimetica ${mediaAritimetica / 10}<br>`)
+        document.write(`Quantidade de numeros Positivos ${numPositivos}<br>`)
+        document.write(`Quantidade de numeros Negativos ${numNegativos}<br>`)
+        document.write(`Percentual Positivo ${(numPositivos*100)/10}%<br>`)
+        document.write(`Percentual Negativo ${(numNegativos*100)/10}%<br>`)
+
+
+
+    </script>
+</body>
+</html>

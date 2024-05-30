@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let valorSolicitado
+        do{
+            valorSolicitado = Number(prompt("Digite um numero inteiro positivo"))
+        }while(isNaN(valorSolicitado) || valorSolicitado <= 0 || !Number.isInteger(valorSolicitado))
+        let valorCalculado = 0
+        let nota = 0
+
+            while((valorCalculado + 50) <= valorSolicitado){
+                nota++
+                valorCalculado += 50
+            }
+            if(nota != 0){
+                document.write(`GC$ 50,00 - ${nota}<br>`)
+                nota = 0
+            }
+            while((valorCalculado + 10) <= valorSolicitado){
+                nota++
+                valorCalculado += 10
+            }
+            if(nota != 0){
+                document.write(`GC$ 10,00 - ${nota}<br>`)
+                nota = 0
+            }
+            while((valorCalculado + 5) <= valorSolicitado){
+                nota++
+                valorCalculado += 5
+            }
+            if(nota != 0){
+                document.write(`GC$ 5,00 - ${nota}<br>`)
+                nota = 0
+            }
+            while((valorCalculado + 1) <= valorSolicitado){
+                nota++
+                valorCalculado += 1
+            }
+            if(nota != 0){
+                document.write(`GC$ 1,00 - ${nota}<br>`)
+                nota = 0
+            }
+    </script>
+</body>
+</html>

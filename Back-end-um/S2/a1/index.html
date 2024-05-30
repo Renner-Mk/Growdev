@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacos de repetição</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // round arredondda pra cima, e floor arredonda para baixo
+        //isNaN retorna true se nao for um numero com isso da para fazer verificações
+        // const numeroAleatorio = 1 //Math.floor(Math.random() * 10) + 1
+        // let tentativas = 0
+
+        // while(true){
+        //     const palpite = 1//parseInt(prompt("de um chute de 1 a 10"))
+        //     tentativas++
+        //     if (palpite == numeroAleatorio){
+        //         console.log(`parabens achertou na ${tentativas}`)
+        //         break;
+        //     }else{
+        //         console.log(`Tente novamente`)
+        //     }
+        // }
+
+        
+
+        // let numero = parseInt(prompt("Digite um numero positivo qualquer"))
+        // let contador = 0
+        // while(contador < numero){
+        //     contador++
+        //     document.write(`${contador} `)
+        // }
+        // document.write(`Acabou!!`)
+
+
+
+
+
+        // let valor = false;
+        // let pessoas = 0
+        // let mediaIdade = 0
+        // let maior21 = 0
+
+        // while(!valor){
+        //     pessoas++
+        //     let idadePessoa = parseInt(prompt("Idade da pessoa"))
+        //     mediaIdade += idadePessoa
+        //     let continuar = parseInt(prompt("1 para Sim, caso não qualquer outro numero"))
+        //     if(continuar != 1){
+        //         valor = true
+        //     }
+        //     if(idadePessoa >= 21){
+        //         maior21++
+        //     }   
+        // }
+        // document.write(`<br>Digitado ${pessoas} idades, a media é ${mediaIdade / pessoas}, e ${maior21} tem 21 ou mais`)
+
+
+
+
+
+        // let numero = parseInt(prompt("digite um numero para taboada"))
+        // for(let i = 1; i <= 10; i++){
+        //     console.log(`${numero} x ${i} = ${numero * i}`)
+        // }
+
+        // let n = 5
+        // let mediaN = 0
+        // for(let i = 1;i <= n; i++){
+        //     mediaN += i
+        //     if(i == n){
+        //         mediaN /= n
+        //     }
+        // }
+        // document.write(`<br>Media dos numero até ${n} é ${mediaN}`)
+
+
+        let valorRecebido
+        let pares 
+        let impares
+        do{
+            valorRecebido = Number(prompt("Digite um numero inteiro positivo"))
+        }while(isNaN(valorRecebido) || valorRecebido <= 0 || !Number.isInteger(valorRecebido))
+
+        for(let i = 1; i <= valorRecebido; i++){
+            if(i % 2 == 0){
+                if(i <= 2){
+                    pares = i.toString() +" "
+                }else{
+                pares += i.toString() +" "
+                }
+            }else{
+                if(i <= 2){
+                    impares = i.toString() +" "
+                } else{
+                impares += i.toString() +" "
+                }
+            }
+        }
+        document.write(`Numeros pares ${pares}`)
+        document.write(`Numeros impares ${impares}`)
+
+
+
+        // const numTipo = 20
+        // for(let i = 1; i <= numTipo; i++){
+        //     if(i % 2 == 0){
+        //         console.log(`par ${i}`)
+        //     }
+        // }
+        // for(let i = 1; i <= numTipo; i++){
+        //     if(i % 2 == 1){
+        //         console.log(`impar ${i}`)
+        //     }
+        // }
+
+
+        let fatorial = 4
+        let valor = 1
+        for(let i = 1; i <= fatorial; i++){
+            valor *= i
+        }
+        console.log(`fatorial ${valor}`)
+    </script>
+</body>
+</html>
