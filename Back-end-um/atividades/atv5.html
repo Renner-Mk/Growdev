@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        document.write("<h3>Exercicio 1</h3>")
+        let idade
+        let alunos = 0
+        let media = 0
+        while(true){
+            do{
+            idade = Number(prompt("Digite a idade dos alunos, sera considerado apenas idades validas"))
+            }while(isNaN(idade) || idade <= 0 || !Number.isInteger(idade))
+            if(idade != 999){
+                alunos++ 
+                
+                media += idade 
+            }else{
+                document.write(`Nessa turma tem ${alunos} alunos e a media de idade é ${media / alunos}`)
+                break;
+            }
+        }
+        
+        document.write("<hr>")
+        document.write("<h3>Exercicio 2</h3>")
+        let genero
+        
+        let salarioM = 0
+        let salarioF = 0
+        let continuar = true
+        while(continuar){
+            do{
+                genero = Number(prompt("Digite seu genero, 1 para masculino e 2 para feminino"))
+            }while(isNaN(genero) || genero < 1 || genero > 2 || !Number.isInteger(genero))
+            let salario
+            do{
+                if(genero == 1){
+                    salarioM += Number(prompt("Digite seu salario nesse formato EX: 1500"))
+                    salario = salarioM
+                }else{
+                    salarioF += Number(prompt("Digite seu salario nesse formato EX: 1500"))
+                    salario = salarioF
+                }
+            }while(isNaN(salario) || salario <= 0 || !Number.isInteger(salario))
+
+            let test
+            do{
+                test = Number(prompt(`Quer cadastrar mais?\n1 para SIM e\n2 para NÃO`))
+            }while(isNaN(test) || test < 1 || test > 2 || !Number.isInteger(test))
+            if(test == 2){
+                continuar = false
+            }
+        }
+        document.write(`Salario total dos Homens = R$${salarioM}<br>`)
+        document.write(`Salario total das Mulheres = R$${salarioF}<br>`)
+        
+
+        document.write("<hr>")
+        document.write("<h3>Exercicio 3</h3>")
+        let primeiroValor = 3
+        let ultimoValor = 10
+        let incremento = 2
+        document.write(`Contagem:`)
+        for (let i = primeiroValor; i <= ultimoValor; i+=incremento){
+            document.write(` ${i} `)
+        }
+        document.write(`Acabou! <br>`)
+
+        
+
+        document.write("<hr>")
+        document.write("<h3>Exercicio 4</h3>")
+
+        let nomeCliente = prompt("Digite seu nome")
+        let generoCliente
+        let valorCompraCliente = 0
+
+        do{
+            generoCliente = Number(prompt("Digite seu genero,\n1 para masculino \n2 para feminino"))
+        }while(isNaN(generoCliente) || generoCliente < 1 || generoCliente > 2 || !Number.isInteger(generoCliente))
+        let contComprar 
+        while(true){
+            let testCompraCliente
+            do{
+                testCompraCliente = Number(prompt("Digite o Valor da Compra"))
+            }while(isNaN(testCompraCliente) || testCompraCliente <= 0 || !Number.isInteger(testCompraCliente))
+            valorCompraCliente += testCompraCliente
+            do{
+                contComprar = Number(prompt("Gostaria de continuar a comprar?\n1 Para Sim \n2 Para Não"))
+            }while(isNaN(contComprar) || contComprar < 1 || contComprar > 2 || !Number.isInteger(contComprar))
+            if(contComprar == 2){
+                if(generoCliente == 1){
+                    document.write(`Sua compra deu o valor de R$${valorCompraCliente * 0.95}`)
+                }else{
+                    document.write(`Sua compra deu o valor de R$${valorCompraCliente * 0.87}`)
+                }
+                break;
+            }
+        }
+
+        
+
+        document.write("<hr>")
+        document.write("<h3>Exercicio 5</h3>")
+        let distanciaPassageiro
+        do{
+            distanciaPassageiro = Number(prompt("Digite quantos km deseja rodar"))
+        }while(isNaN(distanciaPassageiro) || distanciaPassageiro <= 0 || !Number.isInteger(distanciaPassageiro))
+
+        if(distanciaPassageiro > 200){
+            document.write(`Valor da viagem ficou ${distanciaPassageiro * 0.45}`)
+        }else{
+            document.write(`Valor da viagem ficou ${distanciaPassageiro * 0.50}`)
+        }
+
+
+        document.write("<hr>")
+        document.write("<h3>Exercicio 6</h3>")
+        let temp
+        do{
+            temp = Number(prompt("Digite a largura do terreno"))
+        }while(isNaN(temp) || temp <= 0 || !Number.isInteger(temp))
+        let largura = temp
+        do{
+            temp = Number(prompt("Digite o comprimento do terreno"))
+        }while(isNaN(temp) || temp <= 0 || !Number.isInteger(temp))
+        let comprimento = temp
+        let medida = largura * comprimento
+
+        if(medida < 100){
+            document.write(`Terreno popular com ${medida} metros quadrados`)
+        }else if(medida >= 100 && medida <= 500){
+            document.write(`Terreno Master com ${medida} metros quadrados`)
+        }else{
+            document.write(`Terreno Vip com ${medida} metros quadrados`)
+        }
+        
+    </script>
+</body>
+</html>
