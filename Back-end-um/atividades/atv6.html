@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        document.write("<h3>Exercicio 1 e 2</h3>")
+        let idade
+        let habilitacao 
+        do{
+            idade = Number(prompt("Digite sua idade"))
+        }while(isNaN(idade) || idade <= 0 || !Number.isInteger(idade))
+        do{
+                habilitacao = Number(prompt("Possui habilitação?\n1 para Sim\n2 para Não"))
+            }while(isNaN(habilitacao) || habilitacao < 1 || habilitacao > 2 || !Number.isInteger(habilitacao))
+        if(idade >= 18 && habilitacao === 1){
+            document.write("Pode digirir")
+        }else{
+            document.write("Não pode dirigir")
+        }
+        
+        document.write("<hr><h3>Exercicio 3</h3>")
+        document.write("console")
+        const diaSemana = Number(prompt("Digite um numero de 1 a 7"))
+        if(diaSemana == 1){
+            console.log("Hoje é Domingo")
+        }else if(diaSemana == 2){
+            console.log("Hoje é Segunda")
+        }else if(diaSemana == 3){
+            console.log("Hoje é Terça")
+        }else if(diaSemana == 4){
+            console.log("Hoje é Quarta")
+        }else if(diaSemana == 5){
+            console.log("Hoje é Quinta")
+        }else if(diaSemana == 6){
+            console.log("Hoje é Sexta")
+        }else if(diaSemana == 7){
+            console.log("Hoje é Sabado")
+        }else{
+            console.log("Dia não reconhecido")
+        }
+
+        document.write("<hr><h3>Exercicio 4</h3>")
+        document.write("console")
+        let diaDaSemana = Number(prompt("Digite um numero de 1 a 7"))
+        switch(diaDaSemana){
+            case 1:
+                console.log("Hoje é Domingo")
+            break;
+
+            case 2:
+            console.log("Hoje é Segunda")
+            break;
+
+            case 3:
+                console.log("Hoje é Terça")
+            break;
+
+            case 4:
+                console.log("Hoje é Quarta")
+            break;
+
+            case 5:
+                console.log("Hoje é Quinta")
+            break;
+
+            case 6:
+                console.log("Hoje é Sexta")
+            break;
+
+            case 7:
+                console.log("Hoje é Sabado")
+            break;
+            default:
+                console.log("Dia não reconhecido")
+            break;
+        }
+
+        document.write("<hr><h3>Exercicio 5</h3>")
+        document.write("console")
+        for(let i = 1; i <= 10; i++){
+            if(i % 2 == 0){
+                console.log(`${i} é par`)
+            }
+        }
+
+        document.write("<hr><h3>Exercicio 6</h3>")
+        let texto = "30 Numeros Impares:"
+        let qtdImpar = 0
+        for(let i = 1; qtdImpar <= 30; i++){
+            if(i % 2 != 0){
+                texto += " " + i.toString()
+                qtdImpar++
+            }
+        }
+        document.write(texto)
+
+
+        document.write("<hr><h3>Exercicio 7</h3>")
+        let somaTotal = 0
+        let soma = 10
+        do{
+            somaTotal += soma
+            soma ++
+        }while(soma <= 100)
+        document.write(`A soma total é: ${somaTotal}`)
+
+        document.write("<hr><h3>Exercicio 8</h3>")
+        let salario = 2500
+        if(salario < 1903.98){
+            document.write("ISENTO DE IR")
+        }else{
+            document.write("TRIBUTADO NO IR")
+        }
+
+        document.write("<hr><h3>Exercicio 9</h3>")
+        let verificarPrimo
+        do{
+            verificarPrimo = Number(prompt("Digite um numero inteiro e positivo para saber se é primo"))
+        }while(isNaN(verificarPrimo) || verificarPrimo <= 0 || !Number.isInteger(verificarPrimo))
+        let temp = 0
+        for(let i = 1; temp <= 2 && i <= verificarPrimo; i++){
+            if(Number.isInteger(verificarPrimo / i)){
+                temp++
+            }
+        }
+        if(temp == 2){
+            document.write(`O numero ${verificarPrimo} é Primo`)
+        }else{
+            document.write(`O numero ${verificarPrimo} não é primo`)
+        }
+
+
+        document.write("<hr><h3>Exercicio 10</h3>")
+        let altura 
+        do{
+            altura = Number(prompt("Digite sua Altura em metros"))
+        }while(isNaN(altura) || altura <= 0)
+        let genero
+        do{
+            genero = Number(prompt("Qual seu Sexo?\n1 para Feminino\n2 para Masculino"))
+        }while(isNaN(genero) || genero < 1 || genero > 2 || !Number.isInteger(genero))
+        if(genero == 1){
+            document.write(`Seu peso ideal é ${Number(((62.1 * altura) - 44.7).toFixed(2))}`)
+        }else{
+            document.write(`Seu peso ideal é ${Number((72.7 * altura) - 58).toFixed(2)}`)
+        }
+
+        document.write("<hr><h3>Exercicio 11</h3>")
+        let turno = prompt("Qual turno você estuda\n'M' para Matutino\n'V' para Vespertino\n'N' para Noturno").toUpperCase()
+        switch(turno){
+            case "M": 
+                document.write("Bom dia")
+                break;
+            case "V": 
+                document.write("Boa tarde")
+                break;
+            case "N": 
+                document.write("Boa Noite")
+                break;
+            default: 
+                document.write("Valor Invalido")
+                break;
+        }
+
+
+        document.write("<hr><h3>Exercicio 12</h3>")
+        let idadeDoador = Number(prompt("Digite sua idade para saber se é um doador de sangue"))
+        
+        if(idadeDoador >= 18 && idadeDoador <= 67){
+            document.write("Voçê pode doar sangue")
+        }else{
+            document.write("Voçê não pode doar sangue")
+        }
+
+
+        document.write("<hr><h3>Exercicio 13</h3>")
+        let numeroImpar = 18
+        document.write(`Numeros impares até ${numeroImpar}: `)
+        for(let i = 1; i <= numeroImpar; i++){
+            if(i % 2 != 0){
+                document.write(`${i} `)
+            }
+        }
+
+        document.write("<hr><h3>Exercicio 14</h3>")
+        let num = 6
+        while ((num * 3) < 500){
+            num *= 3
+        }
+        document.write(num)
+
+
+        document.write("<hr><h3>Exercicio 15</h3>")
+        let a = 4
+        let b = 4
+        let c = 3
+
+        if(a < (b + c) && b < (a + c) && c < (a + b)){
+            if(a==b && b==c){
+                document.write("Todos os lados iguais: Triangulo equilátero")
+            }else if((a < b || a > b) && (b < c || b > c) && (a < c || a > c)){
+                document.write("Todos os lados diferentes: Triangulo escaleno")
+            }else {
+                document.write("Dois lados iguais: Triangulo isósceles")
+            }
+        }else{
+            document.write("Não é um triangulo")
+        }
+
+
+        document.write("<hr><h3>Exercicio 16</h3>")
+        let data = new Date().getFullYear()
+        let dataNascimento = Number(prompt("Digite seu ano de nascimento"))
+
+        if((data - dataNascimento) < 18){
+            document.write("Não pode votar ainda")
+        }else{
+            document.write("Já pode votar")
+        }
+        
+
+        document.write("<hr><h3>Exercicio 17</h3>")
+        const totalEleitores = parseInt(prompt("Digite o número total de eleitores do município:"))
+        const votosBrancos = parseInt(prompt("Digite o número de votos brancos:"))
+        const votosNulos = parseInt(prompt("Digite o número de votos nulos:"))
+        const votosValidos = parseInt(prompt("Digite o número de votos válidos:"))
+
+        const somaVotos = votosBrancos + votosNulos + votosValidos
+
+        if (somaVotos > totalEleitores) {
+            document.write("Erro: A soma dos votos brancos, nulos e válidos ultrapassa o número total de eleitores.")
+        } else {
+
+            const percentualBrancos = (votosBrancos / totalEleitores) * 100
+            const percentualNulos = (votosNulos / totalEleitores) * 100
+            const percentualValidos = (votosValidos / totalEleitores) * 100
+
+            document.write("Percentual de votos brancos: " + percentualBrancos.toFixed(2) + "%")
+            document.write("Percentual de votos nulos: " + percentualNulos.toFixed(2) + "%")
+            document.write("Percentual de votos válidos: " + percentualValidos.toFixed(2) + "%")
+        }
+
+
+        document.write("<hr><h3>Exercicio 18</h3>")
+        let valorDaVenda = 2000
+
+        let parcelas = 1
+
+        if(parcelas == 1){
+            document.write(`Valor total da venda= R$${(valorDaVenda * 0.975).toFixed(2)}`)
+        }else if(parcelas > 1 && parcelas < 6){
+            document.write(`Valor de cada parcela= R$${(valorDaVenda / parcelas).toFixed(2)} Valor total: R$${(valorDaVenda)}`)
+        }else if(parcelas > 5 && parcelas < 11){
+            document.write(`Valor de cada parcela= R$${((valorDaVenda * 1.06) / parcelas).toFixed(2)} Valor total: R$${(valorDaVenda * 1.06)}`)
+        }else if(parcelas > 10 && parcelas < 16){
+            document.write(`Valor de cada parcela= R$${((valorDaVenda * 1.13) / parcelas).toFixed(2)} Valor total: R$${(valorDaVenda * 1.13)}`)
+        }else{
+            document.write("Dados invalidos")
+        }
+        
+    </script>
+</body>
+</html>

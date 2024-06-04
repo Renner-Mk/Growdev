@@ -13,16 +13,16 @@
         document.write('<h3>Exercicio 1</h3>')
         let alturaMaior 
         let alturaMenor   
-        for(let i = 1; i <= 2; i++){
+        for(let i = 1; i <= 15; i++){
             let alturaG = Number(prompt("Digite sua altura"))
             if(i == 1){
                 alturaMaior = alturaG
                 alturaMenor = alturaG
             }
-            if(alturaMaior < alturaG){
+            if(alturaMaior < alturaG){ 
                 alturaMaior = alturaG
             }
-            if(alturaMenor > alturaG){
+            if(alturaMenor > alturaG){ 
                 alturaMenor = alturaG
             }
         }
@@ -81,13 +81,16 @@
 
         document.write('<br><hr>')
         document.write('<h3>Exercicio 5</h3>')
-        let numero = Number(prompt('Digite um numero qualquer'))
+        let numero 
+        do{
+            numero = Number(prompt('Digite um numero qualquer'))
+        }while(numero <= 0 || isNaN(numero) || !Number.isInteger(numero))
         for(let i = 0; i <= numero; i++){
             document.write(`${i}, `)
         }
         document.write('Fim!')
 
-
+        
         document.write('<br><hr>')
         document.write('<h3>Exercicio 6</h3>')
         for(let i = 30; i >= 1; i--){
