@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const nomes = ['Patrick', 'Luana', 'Henrique', 'Bruno']
+        for(let i = 0; i < nomes.length; i++){
+            console.log(nomes[i])
+        }
+
+
+        const numeros = [1, 2, 3, 4, 5];
+        let soma = 0
+        for (let numero of numeros) {
+        soma += numero;
+        }
+        console.log(soma)
+
+
+        const frutas = ['maça', 'abacaxi', 'uva']
+        frutas.push('Melancia')
+        frutas.pop()
+        frutas.unshift('Melancia')
+        frutas.shift()
+        console.log(frutas)
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numero = Number(prompt("Digite um numero"))
+        
+        while((numero * 3) < 500){
+            numero*= 3
+        }
+        console.log(`${numero}`)
+        let primoS = ''
+        for(let i = 30; i > 0; i--){
+            let primo = 0
+            
+            for(let n = 1; n <= i; n++){
+                if(Number.isInteger(i/n)){
+                    primo++
+                }
+                if(primo > 2){
+                    break;
+                }
+            }
+
+            if(primo === 2){
+                primoS += ` [${i}]`
+            }else{
+                primoS += ` ${i}`
+            }
+            
+        }
+        console.log(primoS)
+    </script>
+</body>
+</html>

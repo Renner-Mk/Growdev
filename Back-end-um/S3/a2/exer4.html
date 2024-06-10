@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Questao 7")
+        let rendaMensal = Number(prompt("Digite sua renda mensal"))
+        let restricao = false
+
+        if (rendaMensal >= 2000 && !restricao){
+            console.log(`Emprestimo aprovado`)
+        }else{
+            console.log(`O cliente não é elegível para um emprestimo`)
+        }
+        console.log("")
+        console.log("Questao 8")
+        
+        let rendaMensal2 = Number(prompt("Digite sua renda mensal"))
+        let restricao2 = false
+        if(rendaMensal2 >= 2000 && !restricao2){
+            console.log(`O cliente é elegível, sem restrições`)
+        }else if(rendaMensal2 >= 2000 && restricao2){
+            console.log(`O cliente é elegível, mas com restrições devido ao histórico de crédito.`)
+        }else{
+            console.log(`Emprestimo recusado`)
+            if(rendaMensal2 < 2000 && !restricao2){
+                console.log("O cliente não é elegível devido à renda insuficiente")
+            }else{
+                console.log("O cliente não é elegível devido à renda insuficiente e ao histórico de crédito.")
+            }
+        }
+
+        console.log("")
+        console.log("Questao 10")
+        let formaGeometrica = prompt("Digite uma forma geometrica para calcular a area: \nquadrado \ntriangulo \nretangulo")
+        switch (formaGeometrica){
+            case "quadrado": 
+                let lado = Number(prompt("Digite o valor do lado do quadrado"))
+                console.log(`Area = ${lado * lado}`)
+            break;
+            case "triangulo": 
+                let base = Number(prompt("Digite o valor da base do triangulo"))
+                let altura = Number(prompt("Digite o valor da base do triangulo"))
+                console.log(`Area = ${(base * altura) / 2}`)
+            break;
+            case "retangulo": 
+                let base2 = Number(prompt("Digite o valor da base do retangulo"))
+                let altura2 = Number(prompt("Digite o valor da base do retangulo"))  
+                console.log(`Area = ${base2 * altura2}`)
+            break;
+        }
+
+    </script>
+</body>
+</html>

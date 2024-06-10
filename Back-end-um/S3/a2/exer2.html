@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let valor1 = true
+        let valor2 = false
+        let valor3 = true
+
+        let boolean1 = valor1 && valor2
+        let boolean2 = valor2 && valor3
+        let boolean3 = valor1 && valor3
+
+        console.log("Operador E:")
+
+        console.log(boolean1)
+        console.log(boolean2)
+        console.log(boolean3)
+
+        let bool1 = !valor1 && !valor2
+        let bool2 = !valor2 && !valor3
+        let bool3 = !valor1 && !valor3
+
+        console.log(bool1)
+        console.log(bool2)
+        console.log(bool3)
+
+        console.log('')
+        console.log("Operador OU:")
+
+        let operadorOu1 = valor1 || valor2
+        let operadorOu2 = valor2 || valor3
+        let operadorOu3 = valor1 || valor3
+
+        console.log(operadorOu1)
+        console.log(operadorOu2)
+        console.log(operadorOu3)
+
+        let opeOu1 = !valor1 || !valor2
+        let opeOu2 = !valor2 || !valor3
+        let opeOu3 = !valor1 || !valor3
+
+        console.log(opeOu1)
+        console.log(opeOu2)
+        console.log(opeOu3)
+
+        console.log('')
+        console.log('Sistema Bancario')
+        let conta = 5000
+        let saldoBanco = Number(prompt("Digite um saldo"))
+        let porcentagem = Number(prompt("Digite Quantos % (Porcentos) do saldo quer retirar"))
+        saldoBanco += conta
+        saldoBanco *= (1 - (porcentagem / 100))
+        console.log(saldoBanco)
+    </script>
+</body>
+</html>
