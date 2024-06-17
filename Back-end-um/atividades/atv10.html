@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function alunoNota(nota1, nota2, nota3, letra){
+            if (letra == "a"){
+                return (nota1 + nota2 + nota3) / 3
+            }
+            if (letra == "p"){
+                return (nota1*5 + nota2*3 + nota3*2)/(5+3+2)
+            }
+            console.log("Valores invalidos")
+        }
+
+        const not1 = 10//Number(prompt('Digite a nota 1'))
+        const not2 = 5//Number(prompt('Digite a nota 2'))
+        const not3 = 4//Number(prompt('Digite a nota 3'))
+        const tipo = "p"//prompt('Digite a ou p')
+
+        console.log(`Media: ${alunoNota(not1, not2, not3, tipo).toFixed(2)}`)
+
+        console.log("------------------------------")
+        console.log("Exercicio 2")
+
+        function numParImpar(numero){
+            if(numero % 2 === 0){
+                console.log(`O numero ${numero} é Par`)
+            }else{
+                console.log(`O numero ${numero} é Impar`)
+            }
+        }
+        const num = 3
+        numParImpar(num)
+
+        console.log("-------------------------------")
+        console.log("Exercicio 3")
+
+        function numeroPrimo(numero) {
+            let temp = 0
+            for(let i = 1; i <= numero; i++){
+                if(numero % i == 0){
+                    temp++
+                }
+            }
+            if(temp == 2){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        console.log(numeroPrimo(77))
+
+
+        console.log("-------------------------------")
+        console.log("Exercicio 4")
+
+        function conversorHora(segundos){
+            let tempoSegundo = 0
+            let minuto = 0
+            let hora = 0
+            if(segundos >= 60){
+                tempoSegundo = segundos % 60
+                minuto = (segundos-tempoSegundo) / 60
+            }
+            if(minuto >= 60){
+                hora = (minuto - (minuto % 60)) / 60
+                minuto = minuto % 60
+            }
+
+            console.log(`${hora} : ${minuto} : ${tempoSegundo}`)
+        }
+        conversorHora(2345)
+
+        console.log("-------------------------------")
+        console.log("Exercicio 5")
+
+        function numPerfeito(numero){
+            let testNum = 0
+            for(let i = 1; i <= numero / 2; i++){
+                if(numero % i == 0){
+                    testNum += i
+                }
+            }
+            if(testNum == numero){
+                console.log(`Numero ${numero} é perfeito`)
+            }else{
+                console.log(`Numero ${numero} não é perfeito`)
+            }
+        }
+
+        numPerfeito(8128)
+
+        console.log("-------------------------------")
+        console.log("Exercicio 6")
+        function acessoAoSite(){
+            alert("Bem Vindo ao Site")
+        }
+        acessoAoSite()
+
+        console.log("-------------------------------")
+        console.log("Exercicio 7")
+
+        function mostrarMensagem(){
+            let aplicacao = "JavaScript"
+            console.log(`“Bem vindo à aplicação ${aplicacao}`)  
+            alert(`Bem vindo à aplicação ${aplicacao}`)
+        }
+        mostrarMensagem()
+
+        console.log("-------------------------------")
+        console.log("Exercicio 8")
+
+        function mostrarDobro(num){
+            alert(`O dobro do número ${num} é ${num*2}`)
+        }
+        mostrarDobro(5)
+
+        console.log("-------------------------------")
+        console.log("Exercicio 9")
+
+        function calcularMedia(nota1, nota2, nota3, nome){
+            console.log(`Nota 1: ${nota1}`)
+            console.log(`Nota 2: ${nota2}`)
+            console.log(`Nota 3: ${nota3}`)
+            let media = (nota1+nota2+nota3)/3
+            alert(`${nome}, sua media é ${media}`)
+        }
+        calcularMedia(70,80,90,"Patrick")
+    </script>
+</body>
+</html>

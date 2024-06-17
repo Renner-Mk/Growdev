@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('Exercicio 1')
+        const produto = {
+            nome: "Mouse",
+            valor: 90
+        }
+        console.log(produto)
+        
+        console.log('----------------------------')
+        console.log('Exercicio 2')
+        const notebook = {
+            processador: "i7",
+            memoria: "16GB",
+            preco: 5000,
+            hd:"1TB",
+            ssd:"256GB"
+        }
+        console.log(`Processador: ${notebook.processador}`)
+        console.log(`Memória: ${notebook.memoria}`)
+        console.log(`Preço: ${notebook.preco}`)
+        console.log(`HD: ${notebook.hd}`)
+        console.log(`SSD: ${notebook.ssd}`)
+
+        console.log('----------------------------')
+        console.log('Exercicio 3')
+        const aluno1 = {
+            nome: "Roberto",
+            nota1: 7,
+            nota2: 8
+        }
+        const aluno2 = {
+            nome: "Ricardo",
+            nota1: 10,
+            nota2: 8
+        }
+        console.log(`Aluno: ${aluno1.nome} Nota 1: ${aluno1.nota1} Nota 2: ${aluno1.nota2}`)
+        console.log(`Media das notas: ${(aluno1.nota1 + aluno1.nota2)/2}`)
+
+        console.log(`Aluno: ${aluno2.nome} Nota 1: ${aluno2.nota1} Nota 2: ${aluno2.nota2}`)
+        console.log(`Media das notas: ${(aluno2.nota1 + aluno2.nota2)/2}`)
+
+        console.log(`Media de ambos: ${((aluno1.nota1 + aluno1.nota2)/2 +(aluno2.nota1 + aluno2.nota2)/2)/2}`)
+
+
+        document.write('Exercicio 4')
+        const cadastroPessoa = []
+        let continuar = true
+
+        while(continuar){
+            const nome = prompt("Digite seu nome");
+            const idade = Number(prompt("Digite sua Idade"))
+            const temTrabalho = confirm("Está trabalhando? \nOk para SIM\nCancelar para NÃO")
+            let salario = 0
+            if(temTrabalho){
+                salario = Number(prompt('Digite seu Salario'))
+            }
+
+            const pessoa = {
+                nome,
+                idade,
+                salario,
+                temTrabalho
+            }
+
+            cadastroPessoa.push(pessoa)
+            continuar =  confirm("Deseja cadastrar mais pessoas?")
+        }
+        console.log('----------------------------')
+        console.log("Pessoas empregadas com salários maiores que 2500:")
+        for(const pessoa of cadastroPessoa){
+            if(pessoa.temTrabalho && pessoa.salario >= 2500){
+                console.log(`Nome: ${pessoa.nome}, Idade: ${pessoa.idade} Sarário: ${pessoa.salario}`)
+            }
+            
+        }
+        console.log('----------------------------')
+        console.log("Pessoas empregadas com salários menores que 2500:")
+        for(const pessoa of cadastroPessoa){
+            if(pessoa.temTrabalho && pessoa.salario < 2500){
+                console.log(`Nome: ${pessoa.nome}, Idade: ${pessoa.idade} Sarário: ${pessoa.salario}`)
+            }
+        }
+        console.log('----------------------------')
+        console.log("Pessoas desempregadas:")
+        for(const pessoa of cadastroPessoa){
+            if(pessoa.temTrabalho == false){
+                console.log(`Nome: ${pessoa.nome}, Idade: ${pessoa.idade}`)
+            }
+            
+        }
+    </script>
+</body>
+</html>
