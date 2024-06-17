@@ -7,54 +7,54 @@
 </head>
 <body>
     <script src="aula.js">
-        // let biblioteca = []
-        // let livros = true
-        // while(livros){
-        //     const titulo = prompt("Digite um titulo de livro")
-        //     const numeroPaginas = prompt("Paginas do livro")
-        //     const autor = prompt("Autor do livro")
-        //     const foiLido = false
+        let biblioteca = []
+        let livros = true
+        while(livros){
+            const titulo = prompt("Digite um titulo de livro")
+            const numeroPaginas = prompt("Paginas do livro")
+            const autor = prompt("Autor do livro")
+            const foiLido = false
 
-        //     const livro = {
-        //         titulo,
-        //         numeroPaginas,
-        //         autor,
-        //         foiLido,
-        //     }
+            const livro = {
+                titulo,
+                numeroPaginas,
+                autor,
+                foiLido,
+            }
 
-        //     biblioteca.push(livro)
-        //     livros = confirm("Deseja coloca mais livros?")
-        // }
+            biblioteca.push(livro)
+            livros = confirm("Deseja coloca mais livros?")
+        }
 
-        // let novaBiblioteca = []
-        // for(const livro of biblioteca){
-        //     console.log(`Titulo do livro: ${livro.titulo}`)
-        //     console.log(`Numero de paginas do livro: ${livro.numeroPaginas}`)
-        //     console.log(`Autor do livro: ${livro.autor}`)
-        //     console.log(`Ele foi lido: ${livro.foiLido}`)
-        //     console.log("----------------------------------------------")
-        // }
+        let novaBiblioteca = []
+        for(const livro of biblioteca){
+            console.log(`Titulo do livro: ${livro.titulo}`)
+            console.log(`Numero de paginas do livro: ${livro.numeroPaginas}`)
+            console.log(`Autor do livro: ${livro.autor}`)
+            console.log(`Ele foi lido: ${livro.foiLido}`)
+            console.log("----------------------------------------------")
+        }
 
-        // let retirar = promt("Digite um titulo para retirar o livro da biblioteca")
-        // for(const livro of biblioteca){
-        //     if (livro.titulo !== retirar){
-        //         novaBiblioteca.push(livro)
-        //     }
-        // }
+        let retirar = promt("Digite um titulo para retirar o livro da biblioteca")
+        for(const livro of biblioteca){
+            if (livro.titulo !== retirar){
+                novaBiblioteca.push(livro)
+            }
+        }
 
-        // for(const livro of biblioteca){
-        //     if(livro.titulo == "asd"){
-        //         livro.foiLido = true
-        //     }
-        // }
+        for(const livro of biblioteca){
+            if(livro.titulo == "asd"){
+                livro.foiLido = true
+            }
+        }
         
-        // for(const livro of biblioteca){
-        //     console.log(`Titulo do livro: ${livro.titulo}`)
-        //     console.log(`Numero de paginas do livro: ${livro.numeroPaginas}`)
-        //     console.log(`Autor do livro: ${livro.autor}`)
-        //     console.log(`Ele foi lido: ${livro.foiLido}`)
-        //     console.log("----------------------------------------------")
-        // }
+        for(const livro of biblioteca){
+            console.log(`Titulo do livro: ${livro.titulo}`)
+            console.log(`Numero de paginas do livro: ${livro.numeroPaginas}`)
+            console.log(`Autor do livro: ${livro.autor}`)
+            console.log(`Ele foi lido: ${livro.foiLido}`)
+            console.log("----------------------------------------------")
+        }
     </script>
 </body>
 </html>
