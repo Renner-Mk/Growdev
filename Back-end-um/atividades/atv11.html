@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Exercicio 1")
+        const salarios = [5000.00, 5460.50, 3452.00, 6900.00, 7590.10, 8012.99,
+        1290.00, 15000.00];
+        console.log(salarios.findIndex(function (salario){
+            return salario > 7500
+        }))
+
+        const novoSalarios = salarios.filter(function (novoSalario){
+            return novoSalario > 8000
+        })
+        console.log(novoSalarios)
+
+        console.log("-------------------------------")
+        console.log("Exercicio 2")
+        const rainbow = ["Vermelho", "Laranja", "Preto", "Azul"];
+        rainbow.splice(2, 1, "Amarelo", "Verde")
+        rainbow.push("Roxo")
+        console.log(rainbow)
+
+        console.log("-------------------------------")
+        console.log("Exercicio 3")
+        const cadastroPessoa = []
+
+        function cadastrarPessoa(){
+            const nome = prompt("Digite seu nome")
+            const idade = parseInt(prompt("Digite sua idade"))
+            const temTrabalho = testeTrabalho() 
+            const salario = temTrabalho === 1? testeSalario() : 0
+            const pessoa = {
+                nome,
+                idade,
+                temTrabalho,
+                salario
+            }
+            cadastroPessoa.push(pessoa)
+        }
+
+        function testeTrabalho(){
+            let trabalho
+            do{
+                trabalho = Number(prompt("Está empregado? \n1 Para SIM \n2 para NÃO"))
+            }while(isNaN(trabalho) || trabalho < 1 || trabalho > 2)
+            return trabalho
+        }
+
+        function testeSalario(){
+            let salarioMensal
+            do{
+                salarioMensal = parseInt(prompt("Digite seu Salario"))
+            }while(isNaN(salarioMensal) || salarioMensal < 0)
+            return salarioMensal
+        }
+        let teste = true
+        while(teste){
+            cadastrarPessoa()
+            teste = confirm("Deseja continuar?")
+        }
+
+        let i1 = 0
+        let i2 = 0
+        let i3 = 0
+
+        for (const cadastro of cadastroPessoa) {
+            if(cadastro.temTrabalho === 2){
+                if(i1 === 0) console.log("Pessoas desempregadas:"), i1++
+                console.log(`Nome: ${cadastro.nome}, Idade: ${cadastro.idade}`)
+            }
+
+            if(cadastro.salario < 2500 && cadastro.temTrabalho === 1){
+                if(i2 === 0) console.log("Pessoas empregadas com salários menores que 2500:"), i2++
+                console.log(`Nome: ${cadastro.nome}, Idade: ${cadastro.idade}, Salario: ${cadastro.salario}`)
+            }
+
+            if(cadastro.salario >= 2500 && cadastro.temTrabalho === 1){
+                if(i3 === 0) console.log("Pessoas empregadas com salários maiores que 2500:"), i3++
+                console.log(`Nome: ${cadastro.nome}, Idade: ${cadastro.idade}, Salario: ${cadastro.salario}`)
+            }
+        }
+    </script>
+</body>
+</html>
