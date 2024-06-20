@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Exercicio 1")
+        const pizzaP = 20
+        const pizzaM = 30
+        const pizzaPG = 40
+        const refri = 5
+
+        const pedido = prompt("Escolha uma pizaa:\nPequena \nMedia \nGrande").toLocaleLowerCase()
+        const refrigente = prompt("Deseja refirgerante?\n SIM ou NÃO").toLocaleLowerCase()
+        let comanda = 0
+        if(refrigente === "sim"){
+            comanda = 5
+        }
+            switch (pedido){
+                case "pequena": 
+                comanda += 20
+                break;
+                case "media": 
+                comanda += 30
+                break;
+                case "grande": 
+                comanda += 40
+                break;
+                default: 
+                    alert("Pedido não entendido, tente novamente")
+                break;
+            }
+        console.log(`Valor total a pagar: ${comanda}`)
+        console.log(pedido)
+
+        console.log("------------------------")
+        console.log("Exercicio 2")
+
+        const id = parseInt(prompt("Digite o numero do produto"))
+        if(!isNaN(id) && Number.isInteger(id) && id > 0){
+            const nomeProduto = prompt("Digite o nome do produto")
+
+            if(isNaN(nomeProduto)){
+                const precoProduto = Number(prompt("Digite o preço do produto \nOBS:Preço nao pode ser menor que 19"))
+
+                if(precoProduto >= 20){
+                    const qtdEstoque = Number(prompt("Digite a quantidade em estoque. \nOBS: Deve ser maior que 10 e par"))
+
+                    if(qtdEstoque % 2 === 0 && qtdEstoque > 10){
+                        if(precoProduto % 2 === 0){
+                            alert(`O produto ${nomeProduto} foi cadastrado com sucesso! Produto adicionado na nossa lista de promoções especiais`)
+                        }else{
+                            alert(`O produto ${nomeProduto} foi cadastrado com sucesso!`)}
+                    }else{
+                        alert("Insira uma quantidade de produto válida para o estoque")}
+                }else{
+                    alert("Insira um preço de produto válido")}
+            }else{
+                alert("Insira um nome de produto válido")}
+        }else{
+            alert("Identificador não encontrado, passe um número válido")}
+
+        console.log("------------------------")
+        console.log("Exercicio 3")
+        let anoMes
+        let cliente
+        do{
+            anoMes = parseInt(prompt("Digite 1 para responder em Messes\n2 Para responder em Anos \nA quanto tempo é nosso cliente?"))
+        }while(isNaN(anoMes) || anoMes > 2 || anoMes < 1)
+        do{
+            cliente = parseInt(prompt("A quanto tempo é nosso cliente? \nOBS: apenas Numeros"))
+        }while(isNaN(cliente) || cliente < 0)
+
+        do{
+            let idProduto
+            do{
+                idProduto = parseInt(prompt("Digite o ID do produto"))
+            }while(isNaN(idProduto) || idProduto < 0)
+            let produtoNome
+            do{
+                produtoNome = prompt("Digite o nome do produto")
+            }while(!isNaN(produtoNome))
+            let produtoPreco
+            do{
+                produtoPreco = Number(prompt("Digite o preço do produto"))
+            }while(isNaN(produtoPreco) || produtoPreco < 0)
+            let produtoQTD
+            do{
+                produtoQTD = Number(prompt("Digite a Quantidade do produto"))
+            }while(isNaN(produtoQTD) || produtoQTD < 0)
+            
+        }while(confirm("Deseja continuar a cadastrar?"))
+        if(anoMes === 1){
+            cliente = (cliente / 12).toFixed(1)
+        }
+        if(cliente > 3){
+            console.log("Você tem 30% de desconto nos nossos produtos")
+        }else if(cliente > 2){
+            console.log("Você tem 20% de desconto nos nossos produtos")
+        }else if(cliente > 1){
+            console.log("Você tem 10% de desconto nos nossos produtos")
+        }else{
+            console.log("Clientes novos não possuem desconto.")
+        }
+
+    </script>
+</body>
+</html>
