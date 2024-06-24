@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const listaNumeros = [1,2,3,4,5,6,7,8,9,10]
+        const numerosDobro = listaNumeros.map(function (numero){
+            return numero * 2
+        })
+        
+        const selecionar = numerosDobro.filter(function (numero){
+            return numero > 12
+        })
+        console.log(selecionar)
+        selecionar.push(21)
+        const impar = selecionar.findIndex(function (numero){
+            return numero % 2 !== 0
+        })
+        console.log(`Posição do elemento impar: ${impar}`)
+        
+        const estoque = []
+        const produtoId = 3
+        const produtoNome = 'Beterraba'
+        const preco = 50
+        const qTD = 10
+        const produto = {
+            produtoId,
+            produtoNome,
+            preco,
+            qTD
+        }
+        estoque.push(produto)
+        const produtIndex = estoque.find(function (numero){
+            return numero.produtoId === 3
+        })
+        console.log(produtIndex)
+        estoque[0].produtoId = 3
+        estoque[0].produtoNome = "Cenoura"
+        estoque[0].preco = 75
+        estoque[0].qTD = 2
+        estoque.shift()
+        console.log("Produto deletado com Sucesso !")
+    </script>
+</body>
+</html>

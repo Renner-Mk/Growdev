@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const estoque = [
+            {produtoId: 1, produtoNome: "Arroz", preco: 50, qTD: 5},
+            {produtoId: 2, produtoNome: "Feijao", preco: 30, qTD: 8},
+            {produtoId: 3, produtoNome: "Massa", preco: 10, qTD: 5},
+            {produtoId: 4, produtoNome: "Repolho", preco: 40, qTD: 10}
+        ]
+
+        function novoID(){
+            let valor 
+            let id
+            do{
+                valor = Number(prompt("Digite o Id no produto"))
+                id = estoque.findIndex(function (id){
+                return id.produtoId === valor
+                })
+                console.log(id)
+            }while(valor < 0 || !Number.isInteger(valor) || id !== -1)
+            return valor
+        }
+        function novoNome(){
+            let nome 
+            do{
+                nome = Number(prompt("Digite o Nome no produto"))
+            }while(!isNaN(nome))
+            return nome
+        }
+        function novoPreco(){
+            let preco 
+            do{
+                preco = Number(prompt("Digite o Preço no produto"))
+            }while(preco < 20)
+            return preco.toFixed(2)
+        }
+        function novaQTD(){
+            let qtd 
+            do{
+                qtd = Number(prompt("Digite a Quantidade no produto"))
+            }while(qtd < 10 || qtd % 2 !== 0)
+            return qtd
+        }
+
+        function adicionarProduto(){
+            const produtoId = novoID()
+            const produtoNome = novoNome()
+            const preco = novoPreco()
+            const qTD = novaQTD()
+            const produto = {
+                produtoId,
+                produtoNome,
+                preco,
+                qTD
+            }
+            estoque.push(produto)
+        }
+                
+        function lerProdutos(){
+            console.log("---------------Produtos em estoque-----")
+            for (const produto of estoque) {
+                console.log(`ID do Produto: ${produto.produtoId}`)
+                console.log(`Nome do Produto: ${produto.produtoNome}`)
+                console.log(`Preço do Produto: ${produto.preco}`)
+                console.log(`Quantidade em estoque: ${produto.qTD}`)
+                console.log(" - ")
+            }
+        }
+
+        function atualizarProduto(idProd){
+            const indexEstoque = estoque.findIndex(function (id){
+                return id.produtoId === idProd
+            })
+            if(indexEstoque !== -1){
+                alert(`Atualizando o produto com ID: ${estoque[indexEstoque].produtoId}`)
+                estoque[indexEstoque].produtoId = novoID()
+                estoque[indexEstoque].produtoNome = novoNome()
+                estoque[indexEstoque].preco = novoPreco()
+                estoque[indexEstoque].qTD = novaQTD()
+            }else{
+                console.log("Produto não encontrado")
+            }
+        }
+
+        function deletarProduto(deleterProdutoID){
+            const indexEstoque = estoque.findIndex(function (id){
+                return id.produtoId === deleterProdutoID
+            })
+            if(indexEstoque !== -1){
+                estoque.splice(indexEstoque, 1)
+            }else{
+                console.log("----------------Produto não encontrado\n ")
+            }
+        }
+
+        adicionarProduto()
+        lerProdutos()
+        const valor = Number(prompt("Qual produto deseja Atualizar?"))
+        atualizarProduto(valor)
+        lerProdutos()
+        const deletar = Number(prompt("Qual produto deseja Deletar?"))
+        deletarProduto(deletar)
+        lerProdutos()
+            
+                
+    </script>
+</body>
+</html>

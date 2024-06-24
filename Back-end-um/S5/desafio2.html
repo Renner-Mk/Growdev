@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const restaurante = [
+            {nomePrato: "seial", descricao: "Algo ai", preco: 50, categoria: "especial", disponivel: "Sim"},
+            {nomePrato: "test", descricao: "Algo ai", preco: 30, categoria: "entrada", disponivel: "Sim"},
+            {nomePrato: "ola", descricao: "Algo ai", preco: 10, categoria: "especial", disponivel: "Não"},
+            {nomePrato: "asd", descricao: "Algo ai", preco: 40, categoria: "sobremesa", disponivel: "Sim"}
+        ]
+        
+        function addNomePrato(){
+            let nome
+            do{
+                nome = prompt('Digite o nome do Prato')
+            }while(restaurante.find( valor => valor.nomePrato === nome))
+            return nome
+        }
+        function addPrecoPrato(){
+            let valor
+            do{
+                valor = prompt('Digite o preço do Prato')
+            }while(restaurante.find( valor => valor.preco === valor))
+            return valor
+        }
+        function addDescricaoPrato(){
+            let nomePrato
+            do{
+                nomePrato = prompt('Digite a descrição do Prato')
+            }while(restaurante.find( valor => valor.nomePrato === nomePrato))
+            return nomePrato
+        }
+        function addCategoriaPrato(){
+            let nomePrato
+            do{
+                nomePrato = prompt('Digite a categoria do Prato')
+            }while(restaurante.find( valor => valor.nomePrato === nomePrato))
+            return nomePrato
+        }
+        
+        function addPrato(){
+            const nomePrato = addNomePrato()
+            const descricao = addDescricaoPrato()
+            const preco = addPrecoPrato()
+            const categoria = addcategoriaPrato()
+            const disponivel = comfirm("Dispobibilidade, \nOK - para SIM\nCancelar - Para NÃO")? "Sim" : "Não"
+
+            const prato = {
+                nomePrato,
+                descricao,
+                preco,
+                categoria,
+                disponivel
+            }
+            restaurante.push(prato)
+        }
+
+        function cardapio(){
+            console.log("Pratos do Menu:\n ")
+            for(const cardap of restaurante){
+                console.log(`Nome do Prato: ${cardap.nomePrato}`)
+                console.log(`Descrição do Prato: ${cardap.descricao}`)
+                console.log(`Preço do Prato: ${cardap.preco}`)
+                console.log(`Categoria do Prato: ${cardap.categoria}`)
+                console.log(`Disponivel do Prato: ${cardap.disponivel}`)
+                console.log(" - ")
+            }
+            console.log("------------Fim da lista de Pratos-------------")
+            console.log(" - ")
+        }
+
+        function buscarPrato(opcao){
+            const pratos = restaurante.filter( valor => valor.nomePrato === opcao || valor.preco === opcao || valor.categoria === opcao)
+            if(pratos.length !== 0){
+                console.log("Busca do prato selecionado encontrado:\n ")
+                for(const cardap of pratos){
+                    console.log(`Nome do Prato: ${cardap.nomePrato}`)
+                    console.log(`Descrição do Prato: ${cardap.descricao}`)
+                    console.log(`Preço do Prato: ${cardap.preco}`)
+                    console.log(`Categoria do Prato: ${cardap.categoria}`)
+                    console.log(`Disponivel do Prato: ${cardap.disponivel}`)
+                    console.log(" - ")
+                }
+            }else{
+                console.log("Prato não encontrado")
+            }
+        }
+
+        function atualizarPrato(dadoPrato){
+            const pratos = restaurante.filter( valor => valor.nomePrato === dadoPrato)
+            console.log(pratos)
+            if(pratos.length !== 0){
+                console.log("Busca do prato selecionado encontrado:\n ")
+                for(const cardap of pratos){
+                    cardap.nomePrato = prompt("Novo nome prato")
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+        let test = false
+        while(test){
+        }
+        addPrato();
+        cardapio();
+        //buscarPrato("asd");
+        //atualizarPrato();
+    </script>
+</body>
+</html>

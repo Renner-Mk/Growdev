@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const bibliotecaLivros = [{autor: "Juana", titulo: "Boa noite"},{autor: "Marcos", titulo: "Bom dia"}]
+        
+        function adicionarLivro(){
+            const titulo = prompt("Digite o nome do livro")
+            const autor = prompt("Digite o autor")
+            const livro = {
+                titulo,
+                autor
+            }
+            bibliotecaLivros.push(livro)
+        }
+        function livrosDisponiveis(){
+            for (const livros of bibliotecaLivros) {
+                console.log(`Titulo do livro: ${livros.titulo}`)
+                console.log(`Autor do livro: ${livros.autor}`)
+                console.log(" - ")
+                
+            }
+            console.log("------------Fim da lista de Livros-------------")
+            console.log(" - ")
+        }
+        function atualizarLivro(id, novoTitulo, novoAutor){
+            if( bibliotecaLivros[id] !== undefined){
+                bibliotecaLivros[id].autor = novoAutor
+                bibliotecaLivros[id].titulo = novoTitulo
+                console.log("------------Livro atualizado-----------")
+            } else {
+                console.log("Livro não encontrado")
+            }
+        }
+        livrosDisponiveis();
+        atualizarLivro(1, "Cronicas de algo", "Patrick");
+        livrosDisponiveis();
+
+    </script>
+</body>
+</html>
