@@ -51,9 +51,6 @@
             }
             console.log("  -  -  -  -  -  ")
             console.log("  -  -  -  -  -  ")
-            console.log("  -  -  -  -  -  ")
-            console.log("  -  -  -  -  -  ")
-            console.log("  -  -  -  -  -  ")
         }
 
         function filterCars(model1){
@@ -90,27 +87,42 @@
 
             return test
         }
-
-        function changeCarById(idCar){
+        function searchId(idCar){
             const search = carDealership.findIndex(function(index){
                 return index.id === idCar
             })
+            return search
+        }
+
+        function changeCarById(idCar){
+            search = searchId(idCar)
             if(search === -1){
-                console.log("Carro nao encontrado")
+                console.log("Veículo, não encontrado.")
             }else{
                 carDealership[search].color = prompt("digite a nova cor")
-                carDealership[search].price = prompt("digite o novo preço")
+                carDealership[search].price = Number(prompt("digite o novo preço"))
+                console.log("Veículo, alterado com Sucesso.")
             }
-            console.log(`ID: ${carDealership[search].id} | Modelo: ${carDealership[search].model} | Marca: ${carDealership[search].brand} | Ano: ${carDealership[search].year} | Cor: ${carDealership[search].color} | Preço: R$${carDealership[search].price}`)
         }
+        function deleteCar(idCar){
+            search = searchId(idCar)
+            if(search === -1){
+                console.log("Veículo, não encontrado.")
+            }else{
+                carDealership.splice(search, 1)
+                console.log("Veículo, Deletado com Sucesso.")
+            }
+        }
+
 
         createCars()
         readCars()
         filterCars(prompt("digite a marca de um carro"))
-        if(confirm("deseja alterar cor e valor de um carro?")){
-            changeCarById(parseInt(prompt("Digite o id do carro")))
-            
-        }
+        changeCarById(parseInt(prompt("Digite o id do carro")))
+        readCars()
+        deleteCar(parseInt(prompt("Digite o id do carro que deseja deletar")))
+        readCars()
+        
     </script>
 </body>
 </html>
