@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const carDealership = [
+            {id: 1, brand: "Honda", model: "Civic", year: "2014/2015", color: "azul", price: 40000},
+            {id: 2, brand: "Honda", model: "Civic", year: "2013/2014", color: "preto", price: 45000},
+            {id: 3, brand: "Honda", model: "Civic", year: "2012/2013", color: "branco", price: 42000},
+            {id: 4, brand: "Toyta", model: "LandHover", year: "2012/2013", color: "branco", price: 148000},
+            {id: 5, brand: "Toyta", model: "LandHover", year: "2012/2013", color: "preto", price: 142000},
+        ]
+        
+        function createCars() {
+            const brand = prompt("Digite a marca")
+            const model = prompt("Digite o modelo")
+            const year = parseInt(prompt("Digite o ano"))
+            const color = prompt("Digite a cor")
+            const price = Number(prompt("Digite o preço"))
+            const id = generateId()
+
+            const car = {
+                id,
+                brand,
+                model,
+                year,
+                color,
+                price
+            }
+            carDealership.push(car)
+        }
+
+        function generateId(){
+            return (carDealership.length + 1)
+        }
+        
+        function ordenedCars(){
+            carDealership.sort(function (a, b){
+            return a.price - b.price;
+            })
+        }
+        function readCars(){
+            ordenedCars()
+            for (const cars of carDealership) {
+                console.log(`ID: ${cars.id} | Modelo: ${cars.model} | Marca: ${cars.brand} | Ano: ${cars.year} | Cor: ${cars.color} | Preço: R$${cars.price}`)
+                
+            }
+            console.log("  -  -  -  -  -  ")
+            console.log("  -  -  -  -  -  ")
+            console.log("  -  -  -  -  -  ")
+            console.log("  -  -  -  -  -  ")
+            console.log("  -  -  -  -  -  ")
+        }
+
+        function filterCars(model1){
+            ordenedCars()
+            model1 = testModel(model1)
+
+            const filtered = carDealership.filter(function (model2){
+                return model2.model == model1
+            })
+
+            console.log(filtered)
+            for (const cars of filtered) {
+                console.log(`ID: ${cars.id} | Modelo: ${cars.model} | Cor: ${cars.color} | Preço: R$${cars.price}`)
+            }
+        }
+
+        function testModel(test){
+            const model = carDealership.findIndex(function (index){
+                return index.model === test
+            })
+
+            if(model === -1){
+                let nameModel
+                let mod
+                do{
+                    nameModel = prompt("Digite uma marca valida")
+                    mod = carDealership.findIndex(function (index){
+                    return index.model === nameModel
+                })
+                }while(!isNaN(nameModel) || mod === -1)
+
+                return nameModel
+            }
+
+            return test
+        }
+
+        function changeCarById(idCar){
+            const search = carDealership.findIndex(function(index){
+                return index.id === idCar
+            })
+            if(search === -1){
+                console.log("Carro nao encontrado")
+            }else{
+                carDealership[search].color = prompt("digite a nova cor")
+                carDealership[search].price = prompt("digite o novo preço")
+            }
+            console.log(`ID: ${carDealership[search].id} | Modelo: ${carDealership[search].model} | Marca: ${carDealership[search].brand} | Ano: ${carDealership[search].year} | Cor: ${carDealership[search].color} | Preço: R$${carDealership[search].price}`)
+        }
+
+        createCars()
+        readCars()
+        filterCars(prompt("digite a marca de um carro"))
+        if(confirm("deseja alterar cor e valor de um carro?")){
+            changeCarById(parseInt(prompt("Digite o id do carro")))
+            
+        }
+    </script>
+</body>
+</html>
