@@ -16,5 +16,4 @@ console.log(`A soma é: ${num1+num2}`)
 
 // ctrl + c para parar a execução
 
-
-
+//basico de como criar um servidor em express

@@ -1,0 +1,37 @@
+npm init -y
+Inicia um projeto node
+
+2. npm install express
+Adicionar a lib express como dependência de producao
+
+3. npm install -D nodemon sucrase
+Adiciona libs como dependência de desenvolvimento.
+
+4. Crie o arquivo nodemon.json na raiz do projeto
+{
+"execMap": {
+"js": "node -r sucrase/register"
+}
+}
+
+5. Alterar o arquivo package.json, colocando o seguinte trecho:
+"scripts": {
+"dev": "nodemon src/index.js"
+},
+
+6. Criar o diretório src e o arquivo index.js dentro dele.
+
+7. Escrever o seguinte código no arquivo index.js
+import express from 'express';
+const app = express();
+app.use(express.json());
+
+app.get('/', (request, response) => {
+return response.json('OK');
+
+});
+
+app.listen(8080, () => console.log(“Servidor iniciado”));
+
+8. npm run dev
+Comando para iniciar o servidor
