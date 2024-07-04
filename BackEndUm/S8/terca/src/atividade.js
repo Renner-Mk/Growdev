@@ -3,7 +3,6 @@ import cors from 'cors';
 const app = express();
 app.use(express.json());
 app.use(cors()) // pedindo pra usar o midwhere
-app.use(express.json())
 
 const travels = [
     {id: 1, travel: "Rio de Janeiro", price: 3500, promotion: 15},
