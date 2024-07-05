@@ -116,6 +116,31 @@ app.post('/singup', async (req, res) =>{
     }
 })
 
+app.post('/singup', async (req, res) =>{
+    try {
+        const {userName, password} = req.body
+        // precisa do async no get para poder usaro await
+        const hashedPassword = await bcrypt.hash(password, 10)
+
+        const existingUser = adminUsers.find(user => user.userName === userName)
+
+        if(existingUser){
+            return res.status(400).json({message: 'Usuário já existe.'})
+        }
+
+        const newUser = {
+            id: uuidv4(),
+            userName,
+            password: hashedPassword
+        }
+
+        adminUsers.push(newUser)
+        res.status(201).json({message: 'Admin cadastrada com sucesso.', user: newUser})
+    } catch{
+        response.status(500).json({message: 'Erro ao cadastrar admin.'})
+    }
+})
+
 app.post('/login', async (req, res) => {
 try {
     const {userName, password} = req.body
@@ -132,10 +157,10 @@ try {
         return res.status(400).json({message: 'Senha incorreta'})
     }
 
-    response.status(200).json({message: 'Login Foi um sucesso'})
+    res.status(200).json({message: 'Login Foi um sucesso'})
 
 } catch {
-    response.status(500).json({message: 'Erro ao dar Login admin.'})
+    res.status(500).json({message: 'Erro ao dar Login admin.'})
 }
 })
 app.listen(3000, () => {
