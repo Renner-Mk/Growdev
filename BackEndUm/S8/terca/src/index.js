@@ -1,6 +1,8 @@
 import express, { response } from 'express';
 import cors from 'cors';
 const app = express();
+import bcrypt from 'bcrypt'
+import {v4 as uuidv4} from 'uuid'
 app.use(express.json());
 app.use(cors()) // pedindo pra usar o midwhere
 
@@ -74,6 +76,67 @@ app.get('/users/filter', (request, response) => {
     response.status(200).json(filterUsers)
 })
 
+app.delete('/users/:id', (req, res) => {
+    const {id} = req.params
+
+    const userIndex = users.findIndex(user => user.id === preseInt(id))
+    if(userIndex === -1){
+        return res.status(404).json({message: "Usuario não encontrado"})
+    }
+
+    const deletedUser = users.splice(userIndex, 1)
+
+})
+
+
+const adminUsers = []
+
+app.post('/singup', async (req, res) =>{
+    try {
+        const {userName, password} = req.body
+        // precisa do async no get para poder usaro await
+        const hashedPassword = await bcrypt.hash(password, 10)
+
+        const existingUser = adminUsers.find(user => user.userName === userName)
+
+        if(existingUser){
+            return res.status(400).json({message: 'Usuário já existe.'})
+        }
+
+        const newUser = {
+            userName,
+            password: hashedPassword
+        }
+
+        adminUsers.push(newUser)
+        res.status(201).json({message: 'Admin cadastrada com sucesso.', user: newUser})
+    } catch{
+        response.status(500).json({message: 'Erro ao cadastrar admin.'})
+    }
+})
+
+app.post('/login', async (req, res) => {
+try {
+    const {userName, password} = req.body
+
+    const user = adminUsers.find(user => user.userName === userName)
+
+    if(!user){
+        return res.status(404).json({message: 'Admin nao enconstrado'})
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password)
+
+    if(!isMatch){
+        return res.status(400).json({message: 'Senha incorreta'})
+    }
+
+    response.status(200).json({message: 'Login Foi um sucesso'})
+
+} catch {
+    response.status(500).json({message: 'Erro ao dar Login admin.'})
+}
+})
 app.listen(3000, () => {
     console.log("Servidor rodando, porta 3000")
 })
