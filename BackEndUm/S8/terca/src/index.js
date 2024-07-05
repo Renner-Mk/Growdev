@@ -104,6 +104,7 @@ app.post('/singup', async (req, res) =>{
         }
 
         const newUser = {
+            id: uuidv4(),
             userName,
             password: hashedPassword
         }
@@ -122,7 +123,7 @@ try {
     const user = adminUsers.find(user => user.userName === userName)
 
     if(!user){
-        return res.status(404).json({message: 'Admin nao enconstrado'})
+        return res.status(404).json({message: 'Admin nao encontrado'})
     }
 
     const isMatch = await bcrypt.compare(password, user.password)

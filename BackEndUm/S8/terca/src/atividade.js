@@ -1,5 +1,6 @@
 import express, { response } from 'express';
 import cors from 'cors';
+
 const app = express();
 app.use(express.json());
 app.use(cors()) // pedindo pra usar o midwhere
@@ -56,6 +57,19 @@ app.put("/travels/:id", (request, response) => {
     response.status(201).json({message: `${travl.travel} alterado com sucesso!, seu preço é: ${travl.price} e temos ${travl.promotion} em promoção`})
 })
 
+app.delete('/travels/:id', (req, res) => {
+    const {id} = req.params
+
+    const userIndex = travels.findIndex(user => user.id === parseInt(id))
+    if(userIndex === -1){
+        return res.status(404).json({message: "Usuario não encontrado"})
+    }
+
+    const [deletedUser] = travels.splice(userIndex, 1)
+    
+    res.status(200).json({message: "Viagem deletada com Sucesso"})
+})
+
 app.listen(3000, () => {
-    console.log("Servidor rodando, porta 3000")
+    console.log("Servidor rodando, Atividade")
 })
