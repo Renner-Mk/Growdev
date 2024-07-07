@@ -32,3 +32,10 @@ app.post('/cars', (request, response) => {
     response.status(201).json({message: 'Carro cadastrado com sucesso.'})
 }) 
 
+app.get('/cars', (request, response) => {
+    if(carDealership.length === 0){
+        return response.status(404).json({message: 'Nenhum usuário encontrado'})
+    }
+    
+    response.json(carDealership)
+})
