@@ -10,4 +10,25 @@ app.listen(3000, () => {
     console.log("Servidor Iniciado");
 });
 
+const carDealership = [];
+
+// criar carro e adicionar a lista
+app.post('/cars', (request, response) => {
+    const {model, brand, year, color, price} = request.body;
+    if(!model || !brand || !year || !color || !price){
+        return response.status(400).json({message: "Dados insuficientes"});
+    };
+
+    const car = {
+        id: uuidv4(),
+        model,
+        brand,
+        year,
+        color,
+        price
+    };
+
+    carDealership.push(car);
+    response.status(201).json({message: 'Carro cadastrado com sucesso.'})
+}) 
 
