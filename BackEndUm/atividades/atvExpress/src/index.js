@@ -34,7 +34,7 @@ app.post('/cars', (request, response) => {
 
 app.get('/cars', (request, response) => {
     if(carDealership.length === 0){
-        return response.status(404).json({message: 'Nenhum usuário encontrado'})
+        return response.status(404).json({message: 'Nenhum veiculo encontrado'})
     }
 
     response.json(carDealership)
