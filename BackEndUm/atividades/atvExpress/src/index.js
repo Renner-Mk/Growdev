@@ -36,6 +36,16 @@ app.get('/cars', (request, response) => {
     if(carDealership.length === 0){
         return response.status(404).json({message: 'Nenhum usuário encontrado'})
     }
-    
+
     response.json(carDealership)
+})
+
+app.get('/cars/filtered', (request, response) => {
+    const { filtro } = request.query;
+    let filteredCars = carDealership
+    filteredCars = filteredCars.filter(car => car.brand === filtro)
+    if(filteredCars.length === 0){
+        return response.status(404).json({message: 'Marca não encontrada'})
+    }
+    response.status(200).json({message: `Todos os veiculos da marca ${filtro}`, filteredCars})
 })
