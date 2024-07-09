@@ -9,6 +9,9 @@ import {v4 as uuidv4} from 'uuid';
 app.listen(3000, () => {
     console.log("Servidor Iniciado");
 });
+app.get('/', (request,response) =>{
+    response.send("Atividade Prática - Express II ")
+})
 
 const carDealership = [];
 
