@@ -10,8 +10,10 @@ app.use(cors());
 const port = 3000;
 
 import mainPage from './routes/mainPage'
+import singup from './routes/users'
 
 app.use('/', mainPage);
+app.use('/', singup);
 
 
 app.listen(port, () => {
