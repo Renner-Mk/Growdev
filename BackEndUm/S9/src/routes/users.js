@@ -3,9 +3,10 @@ import { v4 as uuidv4 } from 'uuid'
 import bcrypt from 'bcrypt'
 import { validateUserRestration } from '../middlewares/validation'
 
+
 const router = express.Router() // para interligar e poder usar em outro arquivo
 
-const users = []
+export const users = []
 
 router.post('/singup', validateUserRestration, async (request, response) => {
     const {name, email, password} = request.body
@@ -19,7 +20,7 @@ router.post('/singup', validateUserRestration, async (request, response) => {
     const hashedPassword = await bcrypt.hash(password, 10)
     
     const newUser = {
-        id: uuidv4,
+        id: uuidv4(),
         name,
         email,
         password: hashedPassword
@@ -50,6 +51,5 @@ router.post('/login', async (request, response) => {
         userId: user.id
     })
 })
-
 
 export default router
