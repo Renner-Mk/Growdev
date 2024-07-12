@@ -34,6 +34,27 @@ export function validateUserLogin(request, response, next){
     if(!password){
         response.status(400).send('Insira uma senha válida.')
     }
+
+    next();
+}
+
+export function validateCreateMessage(request, response, next){
+    const {email, title, description} = request.body
+
+    if(!title){
+        response.status(400).send('Por favor, verifique se passou o titulo.')
+    }
+    if(!description){
+        response.status(400).send('Por favor, verifique se passou uma descrição.')
+    }
+
+    const user = users.find(user => user.email === email)
+
+    if(!user){
+        return response.status(404).send("Email não encontrado, verifique ou crie uma conta")
+    }
+
     
     next();
 }
+

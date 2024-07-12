@@ -14,7 +14,7 @@ router.post('/signup', validateUserRestration, async (request, response) =>{
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = {
-            id: uuidv4(),
+            idUser: uuidv4(),
             name,
             email,
             password: hashedPassword
