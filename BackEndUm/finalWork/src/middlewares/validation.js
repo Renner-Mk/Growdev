@@ -58,3 +58,15 @@ export function validateCreateMessage(request, response, next){
     next();
 }
 
+export function validateUpdateMessage(request, response, next){
+    const {title, description} = request.body
+
+    if(!title){
+        response.status(400).send('Por favor, verifique se passou o titulo.')
+    }
+    if(!description){
+        response.status(400).send('Por favor, verifique se passou uma descrição.')
+    }
+
+    next();
+}
