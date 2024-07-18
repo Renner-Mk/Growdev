@@ -8,8 +8,15 @@ const router = express.Router()
 
 const messages = []
 
-router.post('/message', validateCreateMessage, (request, response) =>{
-    const {email, title, description} = request.body
+router.post('/message/:email', validateCreateMessage, (request, response) =>{
+    const {title, description} = request.body
+    const { email } = request.params
+
+    const user = users.find(user => user.email === email)
+
+    if(!user){
+        return response.status(404).send("Email não encontrado, verifique ou crie uma conta")
+    }
 
     const newMessage = {
         email,

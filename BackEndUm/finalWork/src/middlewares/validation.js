@@ -39,7 +39,7 @@ export function validateUserLogin(request, response, next){
 }
 
 export function validateCreateMessage(request, response, next){
-    const {email, title, description} = request.body
+    const {title, description} = request.body
 
     if(!title){
         response.status(400).send('Por favor, verifique se passou o titulo.')
@@ -48,13 +48,6 @@ export function validateCreateMessage(request, response, next){
         response.status(400).send('Por favor, verifique se passou uma descrição.')
     }
 
-    const user = users.find(user => user.email === email)
-
-    if(!user){
-        return response.status(404).send("Email não encontrado, verifique ou crie uma conta")
-    }
-
-    
     next();
 }
 
