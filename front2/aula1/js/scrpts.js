@@ -1,37 +1,49 @@
-// fica dentro de window setTimeout atrasa a execução a escolha do usuario
+//fica dentro de window setTimeout atrasa a execução a escolha do usuario
 //setTimeout(() => console.log("Temporizador"), 2000)
 
-/*
-history.back    volta pra ultima pagina visitada
-*/
 
-// let elementos = document.getElementsByClassName("titulo")
-// console.log(elementos)
+//getElementsByClassName - retorna todos os elementos com a class definida, pode ser mais de uma separada por espaço
+let elementos = document.getElementsByClassName("titulo")
+console.log("1", elementos)
 
-// const primeiroAluno = document.querySelector('.aluno')
-// console.log(primeiroAluno)
+// getElementsByTagName - pega os elementos pela propria tag
+const tagName = document.getElementsByTagName("li")
+console.log("2", tagName) // posso especificar também com [posição do elemento que eu quero como se fosse um arrey]
 
-// const todosAlunos = document.querySelectorAll(".aluno")
-// console.log(todosAlunos)
+// querySelector - retorna o primeiro elemento que atende a class id ou tag
+const primeiroAluno = document.querySelector('.aluno') // atentar que quando for class precisa do .  assim como no id precisa da #
+console.log("3", primeiroAluno)
 
-// const alunos = document.getElementsByClassName(".aluno")
-// console.log(alunos)
+//querySelectorAll - retorna todos os elementos que tem o id class ou tag passados
+const todosAlunos = document.querySelectorAll(".aluno")// atentar que quando for class precisa do .  assim como no id precisa da #
+console.log("4", todosAlunos)
 
-// const aluno1 = document.getElementById("aluno-1")
-// console.log(aluno1)
+//getElementsByClassName - retorna todos os elementos pela class
+const alunos = document.getElementsByClassName(".aluno")
+console.log("5", alunos)
 
-// const itemlist = document.getElementsByTagName("li")
+// getElementById - eesse pelo id
+const aluno1 = document.getElementById("aluno-1")
+console.log("6", aluno1)
 
-// console.log(itemlist)
+const itemlist = document.getElementsByTagName("li")
+console.log("7", itemlist)
 
-// const idAluno = aluno1.getAttribute("id")
+// pega o atribudo do aluno nesse caso o id
+const idAluno = aluno1.getAttribute("id") // poderia usar para pegar o src de uma img
+console.log("8", idAluno)
 
-// console.log(idAluno)
+const chamadaBotao = document.getElementById("chamada")
+chamadaBotao.setAttribute('disabled', 'disebled')// desabilita uma img ou botão
 
-// const a = document.getElementById("aluno-1")
+let html = document.getElementById('aluno-1')
+let html2 = document.getElementById('aluno-3')
+console.log("9", html.innerHTML)
+
+html.innerHTML = "<strong>Patrick</strong>" // adiciona html
+html2.innerText = "<strong>Pedro</strong>" // adiciona texto
 
 
-// let html = documento.getElementById('meuParagrafo').innerHTML;
 
 
 const listaPresensa = document.getElementById("lista-presenca")

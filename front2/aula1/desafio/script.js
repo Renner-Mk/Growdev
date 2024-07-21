@@ -1,19 +1,25 @@
-//corpo
-const corpo = document.querySelector('body')
-
 //cria corpo e adiciona contador
+const h1 = document.createElement('h1')
+h1.innerText = 'Contador de likes'
+document.body.appendChild(h1)
+
+const container = document.createElement('div')
+container.setAttribute("class", 'container')
+document.body.appendChild(container)
+
+
 const contador = document.createElement('p')
 contador.classList.add("contador")
 let likes = 0
 contador.innerText = likes
-corpo.appendChild(contador)
+document.body.appendChild(contador)
 
 
 const btn = document.createElement('button')
 btn.innerText = "Like"
 btn.classList.add("button")
 
-corpo.appendChild(btn)
+document.body.appendChild(btn)
 
 
 function registrarLike(){
@@ -24,7 +30,7 @@ function registrarLike(){
     if (likes == 10){
         const p = document.createElement('p')
         p.innerText = 'Postagem popular'
-        corpo.appendChild(p)
+        document.body.appendChild(p)
     } 
 }
 
