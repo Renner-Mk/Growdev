@@ -8,10 +8,10 @@ function couterClick(event){
     conter++
     text.innerText = `O contador está com ${conter} cliques.`
 }
-function couterClickReboot(event){
+function restartCouter(event){
     conter = 0
     text.innerText = `O contador está com ${conter} cliques.`
 }
 
 increment.addEventListener('click', couterClick)
-decrement.addEventListener('click', couterClickReboot)
+decrement.addEventListener('click', restartCouter)
