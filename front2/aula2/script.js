@@ -1,21 +1,21 @@
-// let counter = 0
+let counter = 0
 
-// const element = document.getElementById('counter')
+const element = document.getElementById('counter')
 
-// const button = document.querySelector('button')
+const button = document.querySelector('button')
 
-// function incrementCounter(event){
-//     //console.log(event)
-//     //console.log(event.type)
-//     //console.log(event.clientX, event.clientY)
-//     counter++
-//     element.innerText = counter
+function incrementCounter(event){
+    //console.log(event)
+    //console.log(event.type)
+    //console.log(event.clientX, event.clientY)
+    counter++
+    element.innerText = counter
 
-//     console.log(this)
-//     this.innerText = 'Mudou o texto'
-// }
+    console.log(this)
+    this.innerText = 'Mudou o texto'
+}
 
-// button.addEventListener('click', incrementCounter)
+button.addEventListener('click', incrementCounter)
 
 
 
