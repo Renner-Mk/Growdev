@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+     <form>
+        <!--
+        Se apertar da o foco no input
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" />
+
+        <label for="nome"></label>
+        <input type="text" id="nome" value="João">
+
+        <input type="email" placeholder="exemplo@seudominio.com" disabled>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+        <span id="togglePassword">Mostrar</span>
+
+        <label for="idade">Idade</label>
+        <input 
+            type="number"
+            name="idade"
+            id="idade"
+            min="5"
+            max="50"
+            step="5"
+        >
+
+        <input type="file" name="arquivo" id="arquivo">
+
+        <label for="data">Data</label>
+        <input type="date" name="data" id="data">
+
+        <label for="color">Cor</label>
+        <input type="color" name="color" id="color">
+
+        <input type="hidden" name="hidden" id="hidden">
+
+
+        <button type="submit"> Enviar</button>
+    </form> -->
+
+    <fieldset>
+        <legend>Informações pessoais</legend>
+
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name">
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+    </fieldset>
+
+    <fieldset>
+        <legend>Informações pessoais</legend>
+
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" id="cidade">
+    </fieldset>
+
+    <fieldset>
+        <legend>Atividade Esportiva</legend>
+        <input type="radio" name="esporte" id="futebol" value="Futebol">
+        <label for="futebol">Futebol</label>
+
+        <input type="radio" name="esporte" id="basquete" value="Basquete">
+        <label for="basquete">Basquete</label>
+
+        <input type="radio" name="esporte" id="tenis" value="Tenis">
+        <label for="tenis">Tenis</label>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Intereses</legend>
+
+        <input type="checkbox" name="interesses" id="academia" value="Academia">
+        <label for="academia">Academia</label>
+
+        <input type="checkbox" name="interesses" id="tecnologia" value="Tecnologia">
+        <label for="tecnologia">Tecnologia</label>
+
+    </fieldset>
+
+    <label for="cidades">Cidades</label>
+    <select name="cidades" id="cidades">
+        <option value="SP">São Paulo</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="BH">Bahia</option>
+    </select>
+
+    <div>
+    <label for="mensagem">Passe sua Mensagem</label>
+        <textarea name="mensagem" id="mensagem" rows="6" cols="50"></textarea>
+    </div>
+    
+    <button type="submit">Enviar</button>
+    <script src="./scripts.js"></script>
+
+    </form>
+</body>
+</html>

@@ -45,7 +45,7 @@ router.post('/login', async (request, response) => {
     if(!passwordMatch){
         return response.status(404).send("Credenciais invalidas")
     }
-
+    
     response.status(200).json({
         message: "Login feito com sucesso!",
         userId: user.id
