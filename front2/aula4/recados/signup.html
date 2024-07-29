@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Recados</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/assets/css/styles.css">
+    <link rel="stylesheet" href="./vendor/css/all.min.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <img class="logo" src="./src/assets/images/logo.svg" alt="">
+
+        <h1 class="title">Crie Sua conta</h1>
+      </header>
+
+      <main>
+        <nav class="container navegation">
+          <button class="btn-login">Faça Login</button>
+        </nav>
+        <form id="form-signup">
+          <div class="form-control content-name">
+            <label for="name">Nome</label>
+            <input type="text" id="name" required placeholder="Digite seu nome"/>
+          </div>
+
+          <div class="form-control content-email">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" required placeholder="exemplo@seudominio.com"/>
+          </div>
+          
+          <div class="form-control content-password tooglePassword">
+            <label for="password">Senha</label>
+            <input type="password" id="password" required placeholder="Digite uma senha"/>
+            <div class="toggle">
+              <i class="fa-solid fa-toggle-on"></i>
+              <i class="fa-solid fa-toggle-off"></i>
+            </div>
+          </div>
+
+            <button class="btn-submit">Criar Conta</button>
+        </form>
+      </main>
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./src/js/api.js"></script>
+    <script src="./src/js/signup.js"></script>
+
+  </body>
+</html>

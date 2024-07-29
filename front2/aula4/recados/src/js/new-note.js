@@ -4,7 +4,7 @@ const description = document.getElementById('description')
 
 async function populateEditForm(){
     try {
-        const response = await api.get(`/note/datails/${noteId}`)
+        const response = await api.get(`/note/details/${noteId}`)
         const note = response.data
 
         title.value = note.title
@@ -29,7 +29,16 @@ async function createNewNote(note){
         }
 
     } catch (error) {
-            console.error("Erro ao criar nota", error)
+            if(error.response){
+                if(error.response.status === 400){
+                    alert(error.response.data.message)
+                }
+
+                if(error.response.status === 404){
+                    alert(error.response.data.message)
+                    location.href = 'login.html'
+                }
+            }
     }
 }
 

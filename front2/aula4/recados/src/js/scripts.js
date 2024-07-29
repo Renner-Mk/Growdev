@@ -66,7 +66,20 @@ function navagateToEditPage(noteId){
     location.href = `edit-note.html?id=${noteId}`
 }
 
-
-
-
 fecthNotes()
+
+
+const addNote = document.querySelector('.addNote')
+addNote.addEventListener('click', () => {
+    location.href = 'new-note.html'
+})
+
+const createAccount = document.querySelector('.btn-signup')
+createAccount.addEventListener('click', () => {
+    location.href = 'signup.html'
+})
+
+const loginAccount = document.querySelector('.btn-login')
+loginAccount.addEventListener('click', () => {
+    location.href = 'login.html'
+})

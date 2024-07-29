@@ -30,10 +30,50 @@ a {
   width: 30rem;
 }
 
+.navegation{
+  text-align: right;
+}
+.navOrientation{
+  width: 100vw;
+  margin-right: 3rem;
+}
+
+.btn-signup, .btn-login{
+  height: 2.5rem;
+  width: fit-content;
+  padding: 0px 1.5rem;
+  border-radius: 16px;
+  background: #1daee7;
+  margin-top: 1.5rem;
+  margin-left: 0.7rem;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: ease 0.2s;
+}
+
+.btn-signup:hover{
+  background-color: #0062d1;
+  scale: 1.1;
+}
+
+.btn-login:hover{
+  background-color: #0b56f7;
+  scale: 1.1;
+}
+
+.togglePassword-on{
+  display: block;
+}
+
 .header {
   width: 100%;
   margin: 3rem 0;
   text-align: center;
+  position: relative;
 }
 
 .header .logo {
@@ -93,6 +133,10 @@ a {
   top: 40px;
   right: 10px;
   visibility: hidden;
+}
+.toggle i{
+  cursor: pointer;
+  scale: 1.2;
 }
 
 .form-control small {
@@ -189,6 +233,15 @@ a {
 
 .card-icons i:hover {
   opacity: 0.7;
+}
+
+.addNote{
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 2.5rem;
+  right: 0rem;
+
 }
 
 /* Estilo para a div de paginação */

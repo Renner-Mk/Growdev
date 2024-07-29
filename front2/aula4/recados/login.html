@@ -25,6 +25,9 @@
       </header>
 
       <main>
+        <nav class="container navegation">
+          <button class="btn-signup">Criar Conta</button>
+        </nav>
         <form id="form-login">
             <div class="form-control">
               <label for="email">E-mail</label>
@@ -36,19 +39,20 @@
               />
             </div>
     
-            <div class="form-control">
+            <div class="form-control tooglePassword">
               <label for="password">Senha</label>
               <input 
                 type="password" 
                 id="password" 
                 required
-                placeholder="Insira um título para o recado" 
+                placeholder="Digite sua senha" 
               />
-                <!-- <div class="card-icons">
-                    <i class="fa-solid fa-eye"></i>
-                </div> -->
+              <div class="toggle">
+                <i class="fa-solid fa-toggle-on"></i>
+                <i class="fa-solid fa-toggle-off"></i>
+              </div>
             </div>
-    
+            
             <button class="btn-submit">Fazer login</button>
           </form>
       </main>
@@ -56,7 +60,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./src/js/api.js"></script>
-    <script src="./src/js/user-login.js"></script>
+    <script src="./src/js/login.js"></script>
 
   </body>
 </html>
