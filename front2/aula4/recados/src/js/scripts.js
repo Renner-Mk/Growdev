@@ -6,13 +6,13 @@ async function fecthNotes(){
 
         // const userId = '3f683271-f165-465a-ba74-3ab229dd93df'        
         const userId = localStorage.getItem('userId')
-        console.log(userId)
-
+        if(!userId){
+            alert('Faça login para poder acessar essa pagina')
+            location.href = 'login.html'
+        }
+        
         const response = await api.get(`/note/${userId}`)
         const notes = response.data.userNote
-
-        console.log(notes)
-
         notes.forEach(note => {
             const noteCard = document.createElement('div')
             noteCard.classList.add('card')
@@ -55,8 +55,6 @@ async function fecthNotes(){
             emptyNoteList.innerText = 'Nenhum recado encontrado.'
             notesContainer.appendChild(emptyNoteList)
         }
-
-
     }catch (error){
         console.error('Erro ao buscar recados.', error)
     }
