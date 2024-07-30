@@ -3,7 +3,7 @@ const notesContainer = document.querySelector('.notes-list')
 async function fecthNotes(){
     try{
         notesContainer.innerHTML = '' // Limpa o HTML
-
+        localStorage.clear()
         // const userId = '3f683271-f165-465a-ba74-3ab229dd93df'        
         const userId = localStorage.getItem('userId')
         if(!userId){
