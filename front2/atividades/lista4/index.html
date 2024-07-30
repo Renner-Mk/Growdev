@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Formulario</h1>
+    </header>
+    <main>
+        <form id="date">
+            <fieldset id="personal-date">
+                <legend>Dados Pessoais</legend>
+                <div class="field">
+                    <label for="name">Nome:</label><input type="text" id="name" name="name" required>
+                </div>
+                <div class="field">
+                    <label for="address">Endereço:</label><input type="text" id="address" name="address" required>
+                </div>
+                <div class="field">
+                    <label for="city">Cidade:</label><input type="text" id="city" name="city" required>
+                </div>
+                <div class="field">
+                    <label for="state">Estado:</label><select id="state" name="state" required>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="BH">Bahia</option>
+                        <option value="MT">Mato Grosso</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset id="profecional-dates">
+                <legend>Dados profissionais</legend>
+                <div class="content">
+                    <label for="office" class="breack-line">Natureza do Cargo</label>
+                    <input type="radio" name="office" id="management" value="Gêrencia" checked required>
+                    <label for="management">Gêrencia</label>
+
+                    <input type="radio" name="office" id="financial" value="Financeiro">
+                    <label for="financial">Financeiro</label>
+
+                    <input type="radio" name="office" id="front-desk" value="Recepção">
+                    <label for="front-desk">Recepção</label>
+
+                    <input type="radio" name="office" id="administrative" value="Administrativo">
+                    <label for="administrative">Administrativo</label>
+
+                    <input type="radio" name="office" id="legal" value="Jurídico">
+                    <label for="legal">Jurídico</label>
+                </div>
+                <div class="content">
+                    <label for="areas-of-interest" class="breack-line">Areas de interesse</label>
+                    <input type="checkbox" name="areas-of-interest" id="computation" value="Computação">
+                    <label for="computation">Computação</label>
+
+                    <input type="checkbox" name="areas-of-interest" id="biology" value="Biologia">
+                    <label for="biology">Biologia</label>
+
+                    <input type="checkbox" name="areas-of-interest" id="environment" value="Meio Ambiente">
+                    <label for="environment">Meio Ambiente</label>
+
+                    <input type="checkbox" name="areas-of-interest" id="engineering" value="Engenharia">
+                    <label for="engineering">Engenharia</label>
+
+                    <input type="checkbox" name="areas-of-interest" id="history" value="Historia">
+                    <label for="history">Historia</label>
+                </div>
+                <div>
+                    <label for="curriculum">Mini Curriculo</label>
+                    <textarea name="curriculum" id="curriculum"></textarea>
+                </div>
+            </fieldset>
+            <div class="btn">
+                <button id="btn-submit">Enviar</button>
+                <button id="btn-reset" type="reset">Limpar</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="./src/scripts.js"></script>
+</body>
+</html>

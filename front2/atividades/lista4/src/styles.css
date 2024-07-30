@@ -1,0 +1,22 @@
+.field{
+    margin: 5px;
+}
+
+.breack-line{
+    display: block;
+}
+.content{
+    margin: .3125rem .3125rem 1.125rem;
+}
+#curriculum{
+    width: 18.75rem;
+    height: 4rem;
+    
+}
+
+.btn{
+    margin-top: 1.5625rem;
+}
+#btn-submit{
+    margin-right: .625rem;
+}
