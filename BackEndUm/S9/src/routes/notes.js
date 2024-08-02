@@ -1,4 +1,4 @@
-import express from "express";
+import express, { request, response } from "express";
 import { v4 as uuidv4} from 'uuid'
 
 import { users } from './users'
@@ -68,21 +68,57 @@ router.delete('/:id', (request, response) => {
     })
 })
 
-router.get('/:id', (request, response) =>{
+// router.get('/:id', (request, response) =>{
+//     const { id } = request.params
+
+//     const user = users.find(user => user.id === id)
+
+//     if(!user){
+//         return response.status(404)
+//     }
+
+//     const userNote = notes.filter(note => note.userId === id)
+
+//     response.status(200).json({
+//         message: "Recados do usuario solicitado:",
+//         userNote
+//     })
+// })
+
+// rota com paginação
+
+router.get('/:id', (request, response) => {
     const { id } = request.params
+    const {page, perPage} = request.query
 
-    const user = users.find(user => user.id === id)
+    const currentPage = parseInt(page) || 1 // valor padrao se nao for passado nada
+    const itemsPerPage = parseInt(perPage) || 10
 
-    if(!user){
-        return response.status(404)
+    const user = users.find(user => user.id === id) // buscando usuario
+
+    if(!user){ // se nao encontrar
+        return response.status(404).json({
+            message: "Usuário não encontrado"
+        })
     }
 
-    const userNote = notes.filter(note => note.userId === id)
+    const userNotes = notes.filter(note => note.userId === id) // pegango todas as notas do usuario encontrado
+
+    const startIndex = (currentPage - 1) * itemsPerPage // descobre o index que vai começar a pegar as notas no caso de começar 1 - 1) *0 = 0
+    const endIndex = startIndex + itemsPerPage // ponto final do corte 
+
+    const paginatedNotes = userNotes.slice(startIndex, endIndex)// atentar que no slice ele nao pega o item de endIndex mas sai vai até ele ou seja nao pega o item do index 3 mas sim pega como item final o 2 no caso pega o 0 1 2 totalizando 3 por pagina como definido no front
+
+    const totalItems = userNotes.length // quantidade de notas no arrey
+
+    const totalPages = Math.ceil(totalItems / itemsPerPage) // faz o calculo quantas paginas vai ter, mas é sempre arredondado para cima mesmo se a ultima pagina nao tenha o total de itens que ela suporta
 
     response.status(200).json({
-        message: "Recados do usuario solicitado:",
-        userNote
+        userNotes: paginatedNotes,
+        totalPages,
+        currentPage
     })
+
 })
 
 // Rota para listar recado por id

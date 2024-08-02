@@ -28,27 +28,37 @@
         <nav class="container navegation">
           <button class="btn-login">Faça Login</button>
         </nav>
+        
         <form id="form-signup">
           <div class="form-control content-name">
             <label for="name">Nome</label>
-            <input type="text" id="name" required placeholder="Digite seu nome"/>
+            <input type="text" id="name" placeholder="Digite seu nome"/>
+            <i class="fa-solid fa-circle-exclamation"></i>
+              <i class="fa-solid fa-circle-check"></i>
+              <small></small>
           </div>
 
           <div class="form-control content-email">
             <label for="email">E-mail</label>
-            <input type="text" id="email" required placeholder="exemplo@seudominio.com"/>
+            <input type="text" id="email" placeholder="exemplo@seudominio.com"/>
+            <i class="fa-solid fa-circle-exclamation"></i>
+              <i class="fa-solid fa-circle-check"></i>
+              <small></small>
           </div>
           
           <div class="form-control content-password tooglePassword">
             <label for="password">Senha</label>
-            <input type="password" id="password" required placeholder="Digite uma senha"/>
+            <input type="password" id="password" placeholder="Digite uma senha"/>
             <div class="toggle">
               <i class="fa-solid fa-toggle-on"></i>
               <i class="fa-solid fa-toggle-off"></i>
             </div>
+            <i class="fa-solid fa-circle-exclamation"></i>
+              <i class="fa-solid fa-circle-check"></i>
+              <small></small>
           </div>
 
-            <button class="btn-submit">Criar Conta</button>
+            <button type="submit" class="btn-submit">Criar Conta</button>
         </form>
       </main>
       
