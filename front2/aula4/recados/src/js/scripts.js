@@ -26,7 +26,7 @@ async function fecthNotes(page){
         
         const response = await api.get(`/note/${userId}`, { params })
         const notes = response.data.userNotes
-        totalPages = response.data.totalPages // mudar na api para ou igual a 1
+        totalPages = response.data.totalPages
 
         
 
