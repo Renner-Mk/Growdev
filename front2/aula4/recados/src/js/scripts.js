@@ -99,6 +99,7 @@ loginAccount.addEventListener('click', () => {
 prevPage.addEventListener('click', () => {
     if(currentPage > 1){
         currentPage--
+        localStorage.setItem('selectPage', currentPage)
         fecthNotes(currentPage)
     }
 })
@@ -106,11 +107,12 @@ prevPage.addEventListener('click', () => {
 nextPage.addEventListener('click', () => {
     if(currentPage < totalPages){
         currentPage++
+        localStorage.setItem('selectPage', currentPage)
         fecthNotes(currentPage)
     }
 })
 
- function updatePaginationButtons(){
+function updatePaginationButtons(){
     selectPage.disabled = totalPages === 1
     prevPage.disabled = currentPage === 1
     nextPage.disabled = currentPage === totalPages || totalPages === 0
@@ -127,7 +129,7 @@ function selectionPage(totalPages){
     const pages = selectPage.querySelectorAll('option');
     pages.forEach(option => {
         if(option.value === localStorage.getItem('selectPage')){
-            option.setAttribute('selected', '')
+            selectPage.value = option.value
         }
     });
     
