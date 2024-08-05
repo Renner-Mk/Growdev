@@ -3,6 +3,8 @@ const notesContainer = document.querySelector('.notes-list')
 const prevPage = document.getElementById('prev-page')
 const nextPage = document.getElementById('next-page')
 
+const selectPage = document.getElementById('select-pages-pagineted')
+
 let currentPage = 1
 let totalPages = 1
 
@@ -24,8 +26,9 @@ async function fecthNotes(page){
         
         const response = await api.get(`/note/${userId}`, { params })
         const notes = response.data.userNotes
+        totalPages = response.data.totalPages // mudar na api para ou igual a 1
 
-        totalPages = response.data.totalPages
+        
 
         notes.forEach(note => {
             const noteCard = document.createElement('div')
@@ -47,26 +50,27 @@ async function fecthNotes(page){
             // Deletar Nota
             deleteIcon.addEventListener('click', () => {
                 const noteId = deleteIcon.getAttribute('data-id')
-                console.log(noteId)
                 deleteNote(noteId)
+                location.reload();
             })
 
             // editar nota
             const editIcon = noteCard.querySelector('.fa-edit')
             editIcon.addEventListener('click', () =>{
                 const noteId = editIcon.getAttribute('data-id')
-                console.log(noteId)
                 navagateToEditPage(noteId)
             })
         });
 
-        if(notes.lenght === 0){
+        
+        if(notes.length === 0){
             const emptyNoteList = document.createElement('h3')
             emptyNoteList.innerText = 'Nenhum recado encontrado.'
             notesContainer.appendChild(emptyNoteList)
         }
 
         updatePaginationButtons()
+        selectionPage(totalPages)
     }catch (error){
         console.error('Erro ao buscar recados.', error)
     }
@@ -77,7 +81,6 @@ function navagateToEditPage(noteId){
 }
 
 fecthNotes(currentPage)
-
 
 const addNote = document.querySelector('.addNote')
 addNote.addEventListener('click', () => {
@@ -91,7 +94,6 @@ const loginAccount = document.querySelector('.btn-login')
 loginAccount.addEventListener('click', () => {
     location.href = 'login.html'
 })
-
 
 
 prevPage.addEventListener('click', () => {
@@ -108,7 +110,34 @@ nextPage.addEventListener('click', () => {
     }
 })
 
-function updatePaginationButtons(){
+ function updatePaginationButtons(){
+    selectPage.disabled = totalPages === 1
     prevPage.disabled = currentPage === 1
-    nextPage.disabled = currentPage === totalPages
+    nextPage.disabled = currentPage === totalPages || totalPages === 0
+}
+
+selectPage.addEventListener('change', (event) => {
+    const selectedPage = event.target.value;
+    localStorage.setItem('selectPage', selectedPage)
+    currentPage = parseInt(selectedPage)
+    fecthNotes(currentPage)
+});
+
+function selectionPage(totalPages){
+    const pages = selectPage.querySelectorAll('option');
+    pages.forEach(option => {
+        if(option.value === localStorage.getItem('selectPage')){
+            option.setAttribute('selected', '')
+        }
+    });
+    
+    if(pages.length !== totalPages){
+        selectPage.innerHTML = ''
+        
+        for(let i = pages.length || 1; i <= totalPages; i++){
+            selectPage.innerHTML += `
+            <option value="${i}">Recados Pagina ${i}</option>
+            `
+        }
+    }
 }

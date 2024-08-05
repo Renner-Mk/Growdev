@@ -38,6 +38,27 @@ a {
   margin-right: 3rem;
 }
 
+#select-pages-pagineted{
+  width: 170px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  
+}
+
+option {
+  background-color: #05565c;
+  color: white;
+} 
+
+.notes-list h3{
+  text-align: center;
+  margin: 3rem 0;
+  text-decoration: underline rgb(243, 132, 6) 2px;
+  font-size: 20px;
+  color: #495057;
+}
+
 .btn-signup, .btn-login{
   height: 2.5rem;
   width: fit-content;
@@ -71,7 +92,7 @@ a {
 
 .header {
   width: 100%;
-  margin: 3rem 0;
+  margin: 3rem 0 1.25rem;
   text-align: center;
   position: relative;
 }
@@ -253,10 +274,10 @@ a {
 /* Estilo para a div de paginação */
 .pagination {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 3rem;
+  margin-top: 12px;
+  margin-bottom: 1rem;
 }
 
 /* Estilo para os botões de página */
@@ -264,10 +285,11 @@ a {
   background-color: #087f5b;
   color: #fff;
   border: none;
-  padding: 10px 15px;
-  margin: 0 5px;
+  padding: 6px 8px;
+  margin: 0;
   cursor: pointer;
   font-size: 16px;
+  border-radius: 20px;
 }
 
 /* Estilo para o botão de página ativa */

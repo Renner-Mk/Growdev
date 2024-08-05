@@ -111,7 +111,7 @@ router.get('/:id', (request, response) => {
 
     const totalItems = userNotes.length // quantidade de notas no arrey
 
-    const totalPages = Math.ceil(totalItems / itemsPerPage) // faz o calculo quantas paginas vai ter, mas é sempre arredondado para cima mesmo se a ultima pagina nao tenha o total de itens que ela suporta
+    const totalPages = Math.ceil(totalItems / itemsPerPage) || 1 // faz o calculo quantas paginas vai ter, mas é sempre arredondado para cima mesmo se a ultima pagina nao tenha o total de itens que ela suporta
 
     response.status(200).json({
         userNotes: paginatedNotes,

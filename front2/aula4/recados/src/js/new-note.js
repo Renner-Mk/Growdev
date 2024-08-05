@@ -2,19 +2,6 @@ const formNewNote = document.getElementById('form-new-note')
 const title = document.getElementById('title')
 const description = document.getElementById('description')
 
-async function populateEditForm(){
-    try {
-        const response = await api.get(`/note/details/${noteId}`)
-        const note = response.data
-
-        title.value = note.title
-        description.value = note.description
-
-    } catch (error) {
-        console.error("Erro ao Popular nota", error)
-    }
-}
-
 async function createNewNote(note){
     try {
         const response = await api.post('/note', note)

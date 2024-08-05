@@ -5,6 +5,21 @@ const description = document.getElementById('description-edit')
 const urlParamns = new URLSearchParams(location.search)
 const noteId = urlParamns.get('id')
 
+async function populateEditForm(){
+    try {
+        const response = await api.get(`/note/details/${noteId}`)
+        const note = response.data
+
+        title.value = note.title
+        description.value = note.description
+
+    } catch (error) {
+        console.error("Erro ao Popular nota", error)
+    }
+}
+
+populateEditForm()
+
 formEditNote.addEventListener('submit', (event) => {
     event.preventDefault()
 
