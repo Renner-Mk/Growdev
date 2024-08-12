@@ -3,91 +3,140 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     width: 100vw;
-    height: 100vh;
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    /* position: relative; */
-}
-header{
-    width: 100%;
-    height: 75px;
-    top:0;
-    left: 0;
-    /* z-index: 1; */
-    background-color: black;
-    display: flex;
-    align-items: center;
-    gap: 60px;
 }
 
-.logo{
-    height: 50px;
-    margin:  50px;
-    
-}
-
-header a{
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: calc(.2rem + 1vw);
-}
-
-main{
-    /* background-color: rgb(34, 130, 215); */
+main {
     flex-grow: 1;
 }
 
-/* main{
-    height: calc(100vh - 75px);
-    width: 100vw;
-    background: url(./img/logo-color.png) no-repeat;
-    /* background: url(./img/download.jpg) no-repeat;
-    background-position: center; 
+.color-image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: url("./img/download.jpg");
     background-size: cover;
+    background-position: center;
+}
+
+.bw-image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("./img/logo.png");
+    background-size: cover;
+
+    mask-image: url("./img/mask.png");
+    mask-size: cover;
+    mask-position: 0% 0%;
+}
+
+.mask-animation {
+    animation: addColor 2700ms steps(32) 2s forwards 3 alternate;
+}
+
+@keyframes addColor {
+    0%{
+        mask-position: 0% 0%;
+    }
+    70%{
+        mask-position: 100% 0%;
+    }
+    100%{
+        mask-position: 100% 0%;
+    }
+}
+  
+main{
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    position: relative;
-    /* overflow: hidden; 
-} */
-/* .nome-filme{
-    width: 900px;
+}
+
+.name-film{
+    width: 40vw;
+    margin: 10px;
     position: relative;
 }
+
+.name-film img{
+    filter: drop-shadow(0 0 25px rgb(255, 255, 255));
+}
+
 .itens{
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+
 }
 .titulo-es{
-    transform: translateY(70%);
     width: 18.75rem;
     animation: forwards scale2 1s ease-in;
+    position: absolute;
+    bottom: 15%;
+    filter: drop-shadow(0 0 25px rgb(0, 0, 0));
 }
 .logo-rodape{
     height: 50px;
     align-self: flex-end;
     margin: 0 80px 80px;
+    position: absolute;
+    right: 0;
+    bottom: 1%;
     animation: alternate scale 3s infinite ease-in;
 }
 
 .persona{
     position: absolute;
-    bottom: 50px;
+    bottom: 120px;
     display: flex;
     gap: 280px;
-    z-index: 1;
-    
+    animation: changeColor infinite alternate 10s;
 }
+
+@keyframes changeColor {
+    0%{
+        filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+    }
+    10%{
+        filter: drop-shadow(0 0 10px rgb(255, 0, 0));
+    }
+    20%{
+        filter: drop-shadow(0 0 10px rgb(68, 255, 0));
+    }
+    30%{
+        filter: drop-shadow(0 0 10px rgb(0, 217, 237));
+    }
+    40%{
+        filter: drop-shadow(0 0 10px rgb(3, 13, 199));
+    }
+    50%{
+        filter: drop-shadow(0 0 10px rgb(124, 4, 237));
+    }
+    60%{
+        filter: drop-shadow(0 0 10px rgb(255, 102, 0));
+    }
+    70%{
+        filter: drop-shadow(0 0 10px rgb(1, 227, 137));
+    }
+    80%{
+        filter: drop-shadow(0 0 10px rgb(4, 244, 0));
+    }
+    90%{
+        filter: drop-shadow(0 0 10px rgb(255, 0, 0));
+    }
+    100%{
+        filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+    }
+}
+
 .persona img{
-    height: 500px;
+    height: 60vh;
 }
 
 @keyframes scale {
@@ -121,9 +170,9 @@ main{
         opacity: 1;
         scale: 1;
     }
-} */
+} 
 
-/* .dots{
+.dots{
     display: flex;
     gap: 1rem;
     position: absolute;
@@ -258,57 +307,16 @@ main{
 
 .dot:nth-child(27) {
     animation-delay: 2700ms;
-} */
-
-.mask-container{
-    position: relative;
-    width: 100;
 }
 
-.color-img{
-    position: absolute;
-    z-index: 0;
-    inset: 0;
-    /* background-repeat: no-repeat; */
-    background-image: url(./img/logo-color.png);
-    background-size: cover;
-
-
-    /* -webkit-mask-image: url(./img/mask.png);
-    -webkit-mask-size: cover;
-    -webkit-mask-position: 0% 0%;
-    -webkit-mask-repeat:no-repeat; */
-    
-
-    mask-image: url(./img/mask.png);
-    mask-size: cover;
-    mask-position: 0% 0%;
-
-    
-
-} 
-
-.bw-image {
-    z-index: 0;
-    max-width: 100%;
-    display: block;
-    animation: addColor 3000ms steps(32) alternate forwards;
+@media (max-width: 1200px) {
+    .persona img{
+        height: 60vh;
+    }
+    .persona{
+        bottom: 80px;
+    }
+    .name-film{
+        width: 500px;
+    }
 }
-    /*44 maks2  32 mask*/
-
-
-/* @keyframes addColor {
-    0%{
-        -webkit-mask-position: 0% 0%;
-        mask-position: 0% 0%;
-    }
-    70%{
-        -webkit-mask-position: 100% 0%;
-        mask-position: 100% 0%;
-    }
-    100%{
-        -webkit-mask-position: 100% 0%;
-        mask-position: 100% 0%;
-    }
-
-} */
