@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.flexbox{
+    height: 250px;
+    border: 2px solid red;
+    margin-bottom: 30px;
+    display: flex;
+    
+}
+.flexbox div{
+    border: 1px solid orange;
+    width: 150px;
+    margin: 15px;
+    background-color: rgba(0, 0, 0, .2);
+}
+.flex-container1{
+    flex-wrap: wrap;/*a qui fala se quebra ou nao linha o padrao é nao quebrar. nowrap*/
+    flex-direction: row-reverse; /*row é o padrao se tiver o reverse ele inverte a ordem e orientação tendo também o columm*/
+}
+.flex-container2{
+    /*
+    flex-start é o padrao
+    flex-end por mais que o row-reverse produza algo semelhante atentar pois ele muda a ordem ja no justfy não
+    center centraliza
+    space-around pega o espaço que sobra ao redor 
+    space between pega o epspaço que sobra no meio
+    space-evenly pega e divide o espaço por igual
+    */
+    justify-content: space-around;
+}
+.flex-container2 div{
+    width: 50px;
+    margin: 0;
+}
+.flex-container3{
+    justify-content: space-around;
+    align-items: center; 
+    /*
+    stretch é o padrao estica do top ao bottom
+    */
+}
+.flex-container3 div{
+    width: 50px;
+    margin: 0;
+}
+.flex-container4{
+    justify-content: space-evenly;
+    align-items: baseline;
+    /*
+    baseline alinha no todo pela base da linha e o flex-start apenas pelo topo
+    */
+}
+.flex-container4 div{
+    width: 50px;
+    margin: 0;
+}
+
+.flex-container4 .div2{
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+}
+
+.flex-container5{
+    justify-content: center;
+    /* align-items: flex-end; */
+    align-content: space-between;/*quando é mais de um item ou pode ser usado tendo o comando wrap*/
+    flex-wrap: wrap;
+}
+.flex-container5 div{
+    width: 150px;
+}
+.flex-container6{
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    height: 400px;
+}
+.flex-container6 div{
+    width: 50px;
+    height: 20px;
+}
+.flex-container7{
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: row;
+    height: 400px;
+}
+.flex-container7 div{
+    width: 50px;
+    height: 20px;
+}
+.flex-container7 .div2{
+    /*trabalha sendo width ou height dependendo do flex direction*/
+    flex-basis: 200px;
+}
+.flex-container8{
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.flex-container8 .div{
+    flex-basis: 50px;
+    /* flex-grow: 1; */
+    margin: 0;
+
+}
+.flex-container8 .div2{
+    flex-grow: 1; /*33.333333%*/
+    /*pega o restante do espaço que tem e divide entre os elementos que tem o flex-grow a proporção depende do total das unidades nesse caso 3, 1 para a div2 e 2 unidades para div4*/
+    margin: 0;
+}
+.flex-container8 .div4{
+    flex-grow: 2; /*66.6666%*/
+    margin: 0;
+}
+
+.flex-container9{
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    
+}
+.flex-container9 div{
+    margin: 0;
+    flex-basis: 250px;
+}
+.flex-container9 .div1{
+    flex-grow: 2;
+    flex-shrink: 2; /*valor padrao 1*/
+}
+.flex-container9 .div3{
+    flex: 1 3 200px;
+}
+
+.flex-container10 div{
+    font-size: 36px;
+}
+.flex-container10 .div1{
+    order: 1; /*padrao é 0*/
+    align-self: flex-start;
+}
+.flex-container10 .div2{
+    order: 2; /*padrao é 0*/
+    align-self: center;
+}

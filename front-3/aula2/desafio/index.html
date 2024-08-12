@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+            height: 500px;
+            border: solid 1px black;
+            padding: 5px;
+            gap: 10px;
+            /* align-items: flex-end; */
+            /* justify-content: flex-end; */
+        }
+        .block{
+            width: 100px;
+            height: 100px;
+        }
+        .block1{
+            background-color: black;
+            animation: translocate 10s ease 1;
+            animation-fill-mode: forwards;
+        }
+        .block2{
+            background-color: orange;
+            animation: translocate2 10s ease 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes translocate {
+            0%{
+                transform: translate(0px);
+                background-color: black;
+            }
+            10%{
+                transform: translate(0px);
+                background-color: black;
+            }
+            20%{
+                transform: translate(0px);
+            }
+            30%{
+                transform: translate(390px, 0px);
+                background-color: yellow;
+            }
+            40%{
+                transform: translate(390px, 390px);
+                background-color: blue;
+            }
+            50%{
+                transform: translate(0px, 390px);
+                background-color: green;
+            }
+            60%{
+                transform: translate(0px, 0px);
+                background-color: red;
+            }
+            70%{
+                transform: translate(390px, 0px);
+                background-color: yellow;
+            }
+            80%{
+                transform: translate(390px, 390px);
+                background-color: blue;
+            }
+            90%{
+                transform: translate(0px, 390px);
+                background-color: green;
+            }
+            100%{
+                transform: translate(0px, 0px);
+                background-color: red;
+            }
+        }
+
+        @keyframes translocate2 {
+            0%{
+                transform: translate(0px, 0px);
+                background-color: red;
+            }
+            10%{
+                transform: translate(280px, 0);
+                background-color: yellow;
+            }
+            20%{
+                transform: translate(280px, 390px);
+                background-color: blue;
+            }
+            30%{
+                transform: translate(-110px, 390px);
+                background-color: green;
+            }
+            40%{
+                transform: translate(-110px, 0px);
+                background-color: red;
+            }
+            50%{
+                transform: translate(280px, 0);
+                background-color: yellow;
+            }
+            60%{
+                transform: translate(280px, 390px);
+                background-color: blue;
+            }
+            70%{
+                transform: translate(-110px, 390px);
+                background-color: green;
+            }
+            80%{
+                transform: translate(-110px, 0px);
+                background-color: red;
+            }
+            90%{
+                transform: translate(280px, 0);
+                background-color: yellow;
+            }
+            100%{
+                transform: translate(280px, 390px);
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="block block1"></div>
+        <div class="block block2"></div>
+    </div>
+</body>
+</html>
