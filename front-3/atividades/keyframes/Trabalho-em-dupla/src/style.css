@@ -1,0 +1,393 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+}
+
+.color-image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: url("./img/download.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.bw-image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("./img/logo.png");
+    background-size: cover;
+
+    mask-image: url("./img/mask.png");
+    mask-size: cover;
+    mask-position: 0% 0%;
+}
+
+.mask-animation {
+    animation: addColor 2700ms steps(32) 2s forwards 3 alternate;
+}
+
+@keyframes addColor {
+    0%{
+        mask-position: 0% 0%;
+    }
+    70%{
+        mask-position: 100% 0%;
+    }
+    100%{
+        mask-position: 100% 0%;
+    }
+}
+  
+main{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-film{
+    width: 40vw;
+    margin: 10px;
+    position: relative;
+}
+
+.name-film img{
+    filter: drop-shadow(0 0 25px rgb(255, 255, 255));
+}
+
+.itens{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.itens2{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.title-es{
+    width: 18.75rem;
+    animation: forwards scale2 1s ease-in;
+    position: absolute;
+    bottom: 15%;
+    filter: drop-shadow(0 0 25px rgb(0, 0, 0));
+}
+.logo-footer{
+    height: 50px;
+    align-self: flex-end;
+    margin: 0 80px 80px;
+    position: absolute;
+    right: 0;
+    bottom: 1%;
+    animation: alternate scale 3s infinite ease-in;
+}
+
+.characters{
+    position: absolute;
+    bottom: 120px;
+    display: flex;
+    gap: 280px;
+    animation: changeColor infinite alternate 10s;
+}
+.characters img:hover {
+    transform: scale(1.3);
+    transition: transform 0.3s ease; 
+}
+
+@keyframes changeColor {
+    0%{
+        filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+    }
+    10%{
+        filter: drop-shadow(0 0 10px rgb(255, 0, 0));
+    }
+    20%{
+        filter: drop-shadow(0 0 10px rgb(68, 255, 0));
+    }
+    30%{
+        filter: drop-shadow(0 0 10px rgb(0, 217, 237));
+    }
+    40%{
+        filter: drop-shadow(0 0 10px rgb(3, 13, 199));
+    }
+    50%{
+        filter: drop-shadow(0 0 10px rgb(124, 4, 237));
+    }
+    60%{
+        filter: drop-shadow(0 0 10px rgb(255, 102, 0));
+    }
+    70%{
+        filter: drop-shadow(0 0 10px rgb(1, 227, 137));
+    }
+    80%{
+        filter: drop-shadow(0 0 10px rgb(4, 244, 0));
+    }
+    90%{
+        filter: drop-shadow(0 0 10px rgb(255, 0, 0));
+    }
+    100%{
+        filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+    }
+}
+
+.characters img{
+    height: 60vh;
+}
+
+@keyframes scale {
+    0%, 100%{
+        scale: 1;
+    }
+    50%{
+        scale: 1.2;
+    }
+}
+
+@keyframes change {
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+@keyframes scale2 {
+    0%{
+        opacity: 0;
+        transform: translate(-150px);
+        scale: 2;
+    }
+    70%{
+        scale: .7;
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
+} 
+
+.dots{
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    bottom: 25px;
+}
+
+.dot{
+    width: 10px;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.dot{
+    animation: color-change 1000ms infinite alternate;
+}
+
+@keyframes color-change {
+    0%{
+        transform: translate(0px, 0);
+        background-color: red;
+    }
+    100%{
+        transform: translate(50px, -10px);
+        background-color: white;
+    }
+}
+
+.dot:nth-child(1) {
+    animation-delay: 100ms;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 200ms;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 300ms;
+}
+
+.dot:nth-child(4) {
+    animation-delay: 400ms;
+}
+
+.dot:nth-child(5) {
+    animation-delay: 500ms;
+}
+
+.dot:nth-child(6) {
+    animation-delay: 600ms;
+}
+
+.dot:nth-child(7) {
+    animation-delay: 700ms;
+}
+
+.dot:nth-child(8) {
+    animation-delay: 800ms;
+}
+
+.dot:nth-child(9) {
+    animation-delay: 900ms;
+}
+
+.dot:nth-child(10) {
+    animation-delay: 1000ms;
+}
+
+.dot:nth-child(11) {
+    animation-delay: 1100ms;
+}
+
+.dot:nth-child(12) {
+    animation-delay: 1200ms;
+}
+
+.dot:nth-child(13) {
+    animation-delay: 1300ms;
+}
+
+.dot:nth-child(14) {
+    animation-delay: 1400ms;
+}
+
+.dot:nth-child(15) {
+    animation-delay: 1500ms;
+}
+
+.dot:nth-child(16) {
+    animation-delay: 1600ms;
+}
+
+.dot:nth-child(17) {
+    animation-delay: 1700ms;
+}
+
+.dot:nth-child(18) {
+    animation-delay: 1800ms;
+}
+
+.dot:nth-child(19) {
+    animation-delay: 1900ms;
+}
+
+.dot:nth-child(20) {
+    animation-delay: 2000ms;
+}
+
+.dot:nth-child(21) {
+    animation-delay: 2100ms;
+}
+
+.dot:nth-child(22) {
+    animation-delay: 2200ms;
+}
+
+.dot:nth-child(23) {
+    animation-delay: 2300ms;
+}
+
+.dot:nth-child(24) {
+    animation-delay: 2400ms;
+}
+
+.dot:nth-child(25) {
+    animation-delay: 2500ms;
+}
+
+.dot:nth-child(26) {
+    animation-delay: 2600ms;
+}
+
+.dot:nth-child(27) {
+    animation-delay: 2700ms;
+}
+
+@media (max-width: 1200px) {
+    .characters img{
+        height: 60vh;
+    }
+    .characters{
+        bottom: 80px;
+    }
+    .name-film{
+        width: 500px;
+    }
+}
+.text{
+    text-align: justify;
+    box-shadow: 0 0 50px black;
+    padding: 20px;
+    background-color: #000000bd;
+}
+
+.title-history{
+    margin-top: 2%;
+    text-align: center;
+    font-size: 3rem;
+    font-style: oblique;
+    color: white;
+    text-shadow: 
+        1px 1px 0 #000,  
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+}
+
+.text {
+    display: flex;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10%;
+    font-style: italic;  
+    font-size: 22px;
+    color: white; 
+    text-shadow: 
+        1px 1px 0 #000,  
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+}
+
+.color-image2 {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: url("./img/wallpapersden.com_deadpool-2k24-fan-art_3840x2152.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.color-image3 {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: url("./img/wallpapersden.com_fierce-wolverine-marvel-sups_2560x1440.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.title-character{
+    margin-top: 25%;
+    width: 23vw;
+    animation: forwards scale2 1s ease-in;
+    position: relative;
+    bottom: 15%;
+    filter: drop-shadow(0 0 25px rgb(0, 0, 0));
+        
+}
+.itens2 img:hover {
+    transform: scale(1.3);
+    transition: transform 0.3s ease; 
+}
