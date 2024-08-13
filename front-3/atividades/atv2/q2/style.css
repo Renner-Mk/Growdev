@@ -1,0 +1,31 @@
+.container{
+    width: 900px;
+    height: 350px;
+    margin: auto;
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.circle{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50%;
+}
+
+.squares{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.square{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
