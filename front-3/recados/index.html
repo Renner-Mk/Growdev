@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Recados</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+      rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./src/assets/css/styles.css">
+    <link rel="stylesheet" href="./vendor/css/all.min.css">
+  </head>
+
+  <body>
+    <nav class="navOrientation navegation">
+      <button class="btn-login">Fazer login</button>
+      <button class="btn-signup">Criar Conta</button>
+
+    </nav>
+    <div class="container">
+      <header class="header">
+        <img class="logo" src="./src/assets/images/logo.svg" alt="">
+
+        <h1 class="title">Lista de Recados</h1>
+        <h2 class="subtitle">Todos os meus recados</h2>
+        <i 
+        class="fa-solid fa-comment-medical addNote"
+        data-bs-toggle="modal"
+        data-bs-target="#addNoteCard"
+        style="color: #12dd0e;"></i>
+
+        <div class="modal fade" id="addNoteCard" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addNoteCardLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addNoteCardLabel">Cadastre seu recado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              
+              <div class="modal-body">
+                <form id="form-new-note">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="title" placeholder="Titulo">
+                    <label for="title">Título</label>
+                  </div>
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Descrição" id="description" style="height: 150px"></textarea>
+                    <label for="description">Descrição</label>
+                  </div>
+
+          
+                  <button class="btn-submit">Cadastrar Recado</button>
+                  <button class="btn-submit" type="reset">Limpar campos</button>
+                </form>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="pagination">
+          <div>
+            <button id="prev-page">Anterior</button>
+            <button id="next-page">Próxima</button>
+          </div>
+          <select id="select-pages-pagineted">
+          </select>
+        </div>
+
+
+        <div class="modal fade" id="editNoteCard" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editNoteCardLabel" aria-hidden="true">
+          <div class="modal-dialog">
+
+              <div class="modal-content">
+
+                  <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="editNoteCardLabel">Cadastre seu recado</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+
+                  <div class="modal-body">
+                      <form id="form-edit-note">
+
+                      <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="title-edit">
+                          <label for="title-edit">Título</label>
+                      </div>
+
+                      <div class="form-floating">
+                          <textarea class="form-control" id="description-edit" style="height: 150px"></textarea>
+                          <label for="description-edit">Descrição</label>
+                      </div>
+
+              
+                      <button class="btn-submit">Cadastrar Recado</button>
+                      <button class="btn-submit" type="reset">Limpar campos</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="notes-list">
+
+        </div>
+        
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./src/js/api.js"></script>
+    <script src="./src/js/scripts.js"></script>
+    <script src="./src/js/delete-note.js"></script>
+    <script src="./src/js/new-note.js"></script>
+    <script src="./src/js/edit-note.js"></script>
+
+
+    
+  
+  </body>
+</html>

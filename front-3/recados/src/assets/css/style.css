@@ -1,0 +1,18 @@
+.togglePassword-on{
+    display: block;
+  }
+
+  .form-floating i {
+    position: absolute;
+    top: 29px;
+    right: 10px;
+    visibility: hidden;
+    transform: translateY(-35%);
+  }
+  .toggle i{
+    cursor: pointer;
+    scale: 1.6;
+    right: -30px;
+  }
+
+  

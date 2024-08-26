@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Recados</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+      rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="./src/assets/css/styles.css"> -->
+    <link rel="stylesheet" href="./src/assets/css/style.css">
+    <link rel="stylesheet" href="./vendor/css/all.min.css">
+  </head>
+
+  <body class="bg-body-secondary">
+
+    <div class="container" style="width: 30rem;">
+
+      <header class="header text-center my-5">
+        <div class="row">
+          <div class="col">
+            <img class="logo" src="./src/assets/images/logo.svg" alt="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mt-5">
+            <h1 class="title fs-2">Crie Sua conta</h1>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <nav class="container navegation">
+          <div class="row">
+            <div class="col justify-content-end d-flex">
+              <button class="btn-login btn btn-info text-white rounded-4 mb-2 px-4">Faça Login</button>
+            </div>
+          </div>
+        </nav>
+        
+        <form id="form-signup">
+          <div class="row">
+            <div class="col">
+              <div class="form-floating my-4">
+                <input type="text" class="form-control rounded-4" id="name" placeholder="name@example.com">
+                <label for="name">Digite seu nome</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-floating my-4">
+                <input type="text" class="form-control rounded-4" id="email" placeholder="name@example.com">
+                <label for="email">exemplo@seudominio.com</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-floating my-4 togglePassword-on">
+                <input type="password" class="form-control rounded-4" id="password" placeholder="Digite uma senha">
+                <label for="password">Digite uma senha</label>
+                <div class="toggle">
+                  <i class="fa-solid fa-toggle-on"></i>
+                  <i class="fa-solid fa-toggle-off"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button type="submit" class="btn-submit btn btn-success text-white rounded-4 mt-2 px-4 py-2 w-100 fs-5">Criar Conta</button>
+            </div>
+          </div> 
+          
+        </form>
+            
+          
+        
+        
+      </main>
+      
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./src/js/api.js"></script>
+    <script src="./src/js/signup.js"></script>
+
+  </body>
+</html>
