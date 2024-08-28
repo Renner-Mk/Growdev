@@ -1,0 +1,36 @@
+.accordion-item{
+    border: none !important;
+    margin-bottom: 5px !important;
+}
+
+.accordion-button{
+    background-color: rgb(71, 71, 71) !important;
+    font-size: large;
+}
+
+.logo-top{
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.header{
+    height: 100vh;
+}
+
+#title-accordion{
+    font-size: 48px;
+}
+
+#width-accordion{
+    width: 60% !important;
+}
+
+#accordionFlushExample button::after{
+    background-image: url(../images/add.svg);
+}
+
+#text-footer-size{
+    font-size: 14px;
+}
