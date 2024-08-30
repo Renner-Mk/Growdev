@@ -9,14 +9,18 @@
 }
 
 .logo-top{
-    width: 100px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    width: 150px;
+    /* position: absolute; */
+    /* top: 10px;
+    left: 10px; */
 }
 
 .header{
     height: 100vh;
+}
+
+.title-header{
+    font-size: 80px;
 }
 
 #title-accordion{
@@ -34,3 +38,26 @@
 #text-footer-size{
     font-size: 14px;
 }
+
+#header-bg{
+    background-image: url(../images/banner-initial.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#btnVamosla{
+    padding: 20px 35px 19px;
+    background-color: red;
+    color: white;
+    font-size: 25px;
+}
+
+.accordion-item button{
+    background-color: #2e2e2e !important;
+}
+
+.title-sectios{
+    font-size: 58px !important;
+}
+
